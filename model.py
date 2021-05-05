@@ -1,7 +1,8 @@
-"""Models for movie ratings app."""
+"""Models for divercity app."""
 
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
+import flickrapi
 
 db = SQLAlchemy()
 
