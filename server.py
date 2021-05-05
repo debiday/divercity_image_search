@@ -37,6 +37,14 @@ def homepage():
     return render_template('test2.html')
 
 
+@app.route('/save-city', methods=['POST'])
+def save_tracking():
+    """Save user input from html form"""
+
+    city = request.form.get('city')
+
+    return city
+
 @app.route('/movies')
 def all_movies():
     """View all movies."""

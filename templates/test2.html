@@ -5,9 +5,8 @@ img {max-height:200px; margin:3px; border:1px solid #dedede;}
 <body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="/static/js/pictures.js"></script>
 
-<div id="user-city">
+<div id="user-city" action="/save-city" method="POST">
     <form style="text-align: center; width: 100%;" id="city-form">				
       <label><h3>Find images of people from a particular city or country.</h3></label>
       <br>
@@ -16,10 +15,43 @@ img {max-height:200px; margin:3px; border:1px solid #dedede;}
           </form>
 
 <script>
-  
+  "use strict";
+console.log("i am saving tracking!");
 
+function saveInput(evt) {
+    console.log('hello saved tracking');
+
+    evt.preventDefault();
+
+
+    // //Get email
+    // let email = $('#user-email').text()
+
+    // //Get user_id
+    // let user_id = $('#user-id').text()
+
+
+    let url = "/save-city";
+    let response = "hello response"
+    //saves values from the front end and sends it to server
+    let savedData = {
+                    //  'user_id': user_id,
+                     'city': $('#user-city').val()
+                    //  'email': email
+                    };
+
+    $.post(url, savedData, (response) => {
+
+        console.log(response)
+
+    });
+}
+
+$("#user-city").on("click", saveInput);
 
 </script>
+
+<script src="/static/js/pictures.js"></script>
 
 <h2><div id="galleryTitle"></div></h2>
 <div style="clear:both;"/>
