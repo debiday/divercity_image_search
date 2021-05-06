@@ -44,6 +44,7 @@ def save_tracking():
     city = request.form.get('city')
 
     return city
+    
 
 @app.route('/movies')
 def all_movies():
