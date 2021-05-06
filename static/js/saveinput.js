@@ -49,7 +49,7 @@ function saveInput(evt) {
 
 
         //add a jquery to replace "place with user input" 
-        $("#galleryTitle").append("place"+" Gallery");
+        $("#galleryTitle").append(response+" ");
                 $.each( data.photos.photo, function( i, gp ) {
 
         let farmId = gp.farm;
@@ -76,3 +76,4 @@ function saveInput(evt) {
 }
 
 $("#city-form").on("submit", saveInput);
+// $("#city-form").reload(true);
