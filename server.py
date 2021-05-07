@@ -1,4 +1,4 @@
-"""Server for movie ratings app."""
+"""Server for image app."""
 
 from flask import (Flask, render_template, request, flash, session,
                    redirect)
@@ -19,14 +19,6 @@ app.jinja_env.undefined = StrictUndefined
 api_key = os.environ["API_KEY"]
 api_secret = os.environ["API_SECRET"]
 
-flickr = flickrapi.FlickrAPI(api_key, api_secret,format='json')
-photos = flickr.photos.search(user_id='73509078@N00', per_page='10')
-sets = flickr.photosets.getList(user_id='73509078@N00')
-
-# parsed = json.loads(raw_json.decode('utf-8'))
-
-SIZES = ["url_o", "url_k", "url_h", "url_l", "url_c"]  # in order of preference
-
 
 # <---------------------------------->
 
@@ -34,7 +26,7 @@ SIZES = ["url_o", "url_k", "url_h", "url_l", "url_c"]  # in order of preference
 def homepage():
     """View homepage."""
 
-    return render_template('test2.html')
+    return render_template('homepage.html')
 
 
 @app.route('/save-city', methods=['POST'])
