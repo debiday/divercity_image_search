@@ -1,6 +1,6 @@
 """CRUD operations."""
 
-from model import db, User, Movie, Rating, connect_to_db
+from model import db, User, Collection, Picture, connect_to_db
 
 
 def create_user(email, password):
@@ -33,21 +33,19 @@ def get_user_by_email(email):
 
 
 
+def get_collections():
+    """Return all collections."""
+
+    return Collections.query.all()
 
 
-def get_movies():
-    """Return all movies."""
-
-    return Movie.query.all()
-
-
-def get_movie_by_id(movie_id):
+def get_collection_by_id(movie_id):
     """Return a movie by primary key."""
 
-    return Movie.query.get(movie_id)
+    return Collection.query.get(collection_id)
 
 
-def create_rating(user, movie, score):
+def create_collection(user, city, url):
     """Create and return a new rating."""
 
     rating = Rating(user=user, movie=movie, score=score)
