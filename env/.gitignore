@@ -1,7 +1,7 @@
-# .bash_profile
-# .bash_profile.swp
-# _pycache_/
-# .DS_Store
-# secrets.sh
-# *.pyc
-# env
+.bash_profile
+.bash_profile.swp
+_pycache_/
+.DS_Store
+secrets.sh
+*.pyc
+env
