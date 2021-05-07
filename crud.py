@@ -1,6 +1,8 @@
 """CRUD operations."""
 
 from model import db, User, Collection, Picture, connect_to_db
+from datetime import datetime
+
 
 
 def create_user(email, password):
@@ -39,22 +41,21 @@ def get_collections():
     return Collections.query.all()
 
 
-def get_collection_by_id(movie_id):
+def get_collection_by_id(collection_id):
     """Return a movie by primary key."""
 
     return Collection.query.get(collection_id)
 
 
-def create_collection(user, city, url):
+def create_collection(user_id, notes, date_saved=datetime.today()):
     """Create and return a new rating."""
 
-    rating = Rating(user=user, movie=movie, score=score)
+    new_collection = Collection(user_id=user_id, notes=notes, date_time=date_time)
 
-    db.session.add(rating)
+    db.session.add(new_collection)
     db.session.commit()
 
-    return rating
-
+    return new_collection
 
 
 def get_photos(image_tag):
@@ -91,6 +92,7 @@ def get_urls(image_tag, max):
             break
 
     return urls
+
 
 if __name__ == '__main__':
     from server import app
