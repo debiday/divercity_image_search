@@ -2,9 +2,22 @@
     display: inline-flex;
 }
 
-#city-section {
+#city-search {
     margin: auto;
     width: 50%;
     border: 3px solid green;
     padding: 10px;
+}
+
+#image-results {
+    margin: auto;
+    width: 80%;
+    border: 3px solid green;
+    padding: 10px;
+    display: block;
+}
+
+/* TODO: Images not centred yet */
+#flickr {
+    display: inline-block;
 }
