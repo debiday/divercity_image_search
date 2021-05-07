@@ -38,11 +38,11 @@ def save_tracking():
     return city
     
 
-@app.route('/movies')
-def all_movies():
-    """View all movies."""
+@app.route('/pictures')
+def all_pictures():
+    """View all pictures."""
 
-    movies = crud.get_movies()
+    pictures = crud.get_movies()
 
     return render_template('all_movies.html', movies=movies)
 

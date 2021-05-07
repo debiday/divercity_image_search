@@ -56,7 +56,11 @@ def create_collection(user_id, notes, date_saved=datetime.today()):
 
     return new_collection
 
+# TODO: Fix this function
+def get_pictures():
+    """Return all pictures in collection."""
 
+    return Pictures.query.all()
 
 # <-----Test CRUD Functions----->
 # def get_photos(image_tag):
