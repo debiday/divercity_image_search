@@ -1,3 +1,1 @@
-export API_KEY="4f2a9c7f2ea592f840664a1486e37348"
-export API_SECRET="4f3551910f9de1f0"
-export FLASK_KEY="SUGdbMvzVo"
+
