@@ -20,4 +20,14 @@
 /* TODO: Images not centred yet */
 #flickr {
     display: inline-block;
+} 
+
+
+input[type=checkbox] {
+    width:30px; 
+    height:30px;
+}
+
+.imgresult {
+    padding: 20px;
 }
