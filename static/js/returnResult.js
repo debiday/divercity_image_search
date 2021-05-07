@@ -64,7 +64,7 @@ function returnResults(evt) {
         //https://www.flickr.com/photos/155854489@N04/51154725669/
 
         
-        $("#flickr").append('<a href="https://www.flickr.com/photo.gne?id=' + id + '/" target="_blank"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg"/></a><input style="display:inline-block; height:20%; "type="radio" value="id">');
+        $("#flickr").append('<a href="https://www.flickr.com/photo.gne?id=' + id + '/" target="_blank"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg"/></a><input class="form-check-input" type="checkbox" value="id">');
 
         });
         });

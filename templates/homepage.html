@@ -2,27 +2,32 @@
 {% block title %}Image Search Home{% endblock %}
 
 {% block body %}
-  <h1>Welcome!</h1>
+
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">WebSiteName</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/about"><b>About</b></a></li>
+      </ul>
+      <div class="nav navbar-nav navbar-right">
+        <form action="/login" class="navbar-form navbar-left" id="login-form" method="POST">
+          <div class="form-group">
+          <input type="email" placeholder="Email" id="email" class="form-control" name="email">
+          <input type="password" placeholder="Password" class="form-control" id="password" name="password">
+          <button type="submit" id="login-button" class="btn btn-default" value="Login">Login</button>
+          </form>
+          <form action="/registration" class="navbar-form navbar-left">
+              <button type="submit" value="Register" class="btn btn-default" id="register-form">Register</button> 
+          </div></form>
+      </div>
+    </div>
+  </nav>
 
 
-  <div class="collapse navbar-collapse" id="navbarsExample02">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="active" href="#home"><b>Home</b></a>
-      </li>
-      <li class="nav-item">
-        <a href="/about"><b>About</b></a>
-      </li>
-    </ul>
-    <form action="/login" id="login-form" method="POST">
-      <input type="email" placeholder="Email" id="email" name="email">
-      <input type="password" placeholder="Password" id="password" name="password">
-      <button type="submit" id="login-form" value="Login">Login</button>
-      </form><form action="/registration">
-          <button type="submit" value="Register" id="register-form">Register</button> 
-        </form>
-  </div>
 
+    <h1 style="text-align: center;">Welcome!</h1>
   
     <div id="flashed">
       <br>
@@ -46,6 +51,8 @@
       
       
       <body>
+
+      
       <div id="city-section">
           <form name="city-form" id="city-form" action="/save-city" method="POST">
             <!-- style="text-align: center; width: 100%; -->
@@ -56,13 +63,14 @@
                 </form>
       </div>
       
+      
+      <div id="image-search">
+        <h2><div id="galleryTitle"></div></h2>
+        <div style="clear:both;"/>
+        <div id="flickr"/>
+      </div>
+
       <script src="static/js/returnResult.js"></script>
-      <script src="/static/js/pictures.js"></script>
-      
-      <h2><div id="galleryTitle"></div></h2>
-      <div style="clear:both;"/>
-      <div id="flickr"/>
-      
       </body>
             
     <!-- <------------FLICKR API------------>
