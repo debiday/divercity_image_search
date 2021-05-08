@@ -77,6 +77,7 @@ Users are able to query for images of people based on city.
 * Integrate API for stock photos (which aren't as diverse)
 * Give users the choice to pay for licensed photos
 * Allow users to share their collections with other users
+* A zoomable world map that load related images on click
 
 <!-- Installation -->
 ### Installation
