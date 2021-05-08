@@ -9,7 +9,7 @@
   <h3 align="center">Divercity</h3>
 
   <p align="center">
-    This project creates an image map of people that can be found in each city. 
+    This project allows you to curate photos of people that can be found in each city. 
     <br />
     <br />
     <br />
@@ -86,9 +86,10 @@ Users are able to query for images of people based on city.
 3. `virtualenv env` to create a virtual environment
 4. `source env/bin/activate` to activate it
 5. `pip3 install -r requirements.txt` to install required packages
-6. Sign up for an API key at [flickr API] https://www.flickr.com/services/apps/create/noncommercial/? (You can enter "demo" for both boxes)
+6. Sign up for an API key at [flickr API](https://www.flickr.com/services/apps/create/noncommercial/?) (You can enter "demo" for both boxes)
 7. Create a new file called  `secrets.sh` in the Divercity directory
-8. Save your API in this format `export API_KEY="xxxxx"
+8. Save your API in this format 
+`export API_KEY="xxxxx"/n
 export API_SECRET="xxxxx"`
 9. `source secrets.sh` back in the terminal
 10. `python3 seed.py` to set up database
