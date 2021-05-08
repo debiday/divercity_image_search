@@ -41,7 +41,7 @@ def save_tracking():
     final_url = f'{url_front}{city}{url_back}'
 
     return final_url
-    
+
 
 # <!--------------------------------------------------------------->
 # <--Routes for User -->
@@ -81,10 +81,10 @@ def submit_login_form():
 
   if user == None:
     flash('''An account for this email doesn't exist yet.
-              Please create a new account!''')
+              Please create a new account.''')
     return redirect('/')
   elif password != user.password:
-    flash('Wrong password. Please try again!')
+    flash('Wrong password. Please try again.')
     return redirect('/')
 
   else: 
