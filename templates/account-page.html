@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.email }} - Details{% endblock %}
+
+{% block body %}
+<div id="tracking-buttons" class="nav">
+  <form action="/logout" method="get">
+    <button id="tracking-top-button" type="submit">Log Out</button></form>
+  <form action="/forum" method="get" >
+    <button id="tracking-top-button" type="submit">Forum</button></form>
+  </div>
+
+
+{% endblock %}

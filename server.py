@@ -89,7 +89,7 @@ def submit_login_form():
     flash('Logged in!')
     session['email'] = user.email
 
-    return redirect('/tracking-page')
+    return redirect('/account-page')
 
 
 @app.route('/logout')
@@ -100,6 +100,22 @@ def logout():
     flash("Successfully logged out")
         
     return redirect('/')
+
+
+# <!--------------------------------------------------------------->
+# <--Routes for Account Page -->
+# <!--------------------------------------------------------------->
+@app.route('/account-page')
+def user_page():
+  """Show user's account-page."""
+  # Removes ability to access this page if not logged in
+  if 'email' in session:
+    user = crud.get_user_by_email(session['email'])
+    # session["email"] = email
+
+    return render_template('account-page.html', user=user)
+  return redirect('/')
+
 
 
 if __name__ == '__main__':
