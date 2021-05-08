@@ -11,16 +11,16 @@ db = SQLAlchemy()
 
 
 class User(db.Model):
-    """A user."""
+    """A list of users."""
 
     __tablename__ = 'users'
 
     user_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    email = db.Column(db.String, nullable=False)
-    password = db.Column(db.String, nullable=False)
+    email = db.Column(db.String(50), nullable=False)
+    password = db.Column(db.String(50), nullable=False)
 
     def __repr__(self):
-        return f'<User user_id={self.user_id} email={self.email}>'
+        return f"<User user_id={self.user_id} email={self.email}>"
 
 
 class Collection(db.Model):

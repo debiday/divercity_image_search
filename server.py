@@ -38,57 +38,68 @@ def save_tracking():
     return city
     
 
-@app.route('/pictures')
-def all_pictures():
-    """View all pictures."""
-
-    pictures = crud.get_movies()
-
-    return render_template('all_movies.html', movies=movies)
 
 
-@app.route('/movies/<movie_id>')
-def show_movie(movie_id):
-    """Show details on a particular movie."""
 
-    movie = crud.get_movie_by_id(movie_id)
+# <!--------------------------------------------------------------->
+# <--Routes for User -->
+# <!--------------------------------------------------------------->
+@app.route('/registration')
+def show_registration():
+    """Show registration page."""
 
-    return render_template('movie_details.html', movie=movie)
-
-
-@app.route('/users')
-def all_users():
-    """View all users."""
-
-    users = crud.get_users()
-
-    return render_template('all_users.html', users=users)
+    return render_template("registration.html")
 
 
-@app.route('/users', methods=['POST'])
+@app.route('/newusers', methods = ["POST"])
 def register_user():
-    """Create a new user."""
+  """Saves user information to database"""
+  
+  email = request.form.get('email')
+  password = request.form.get('password')
 
-    email = request.form.get('email')
-    password = request.form.get('password')
+  user = crud.get_user_by_email(email)
 
-    user = crud.get_user_by_email(email)
-    if user:
-        flash('Cannot create an account with that email. Try again.')
-    else:
-        crud.create_user(email, password)
-        flash('Account created! Please log in.')
+  if user: 
+    flash('Email is already in use. Please log in.')
+  else:
+    user = crud.create_user(email, password)
+    session["email"] = email
+    flash('Your account has been created! Please log in.')
 
+  return redirect('/')
+  
+
+@app.route('/login', methods = ['POST'])
+def submit_login_form():
+  """Submits the login form."""
+
+  user = crud.get_user_by_email(request.form['email'])
+  password = request.form['password']
+
+  if user == None:
+    flash('''An account for this email doesn't exist yet.
+              Please create a new account.''')
+    return redirect('/')
+  elif password != user.password:
+    flash('Wrong password. Please try again.')
     return redirect('/')
 
+  else: 
+    flash('Logged in!')
+    session['email'] = user.email
 
-@app.route('/users/<user_id>')
-def show_user(user_id):
-    """Show details on a particular user."""
+    return redirect('/tracking-page')
 
-    user = crud.get_user_by_id(user_id)
 
-    return render_template('user_details.html', user=user)
+@app.route('/logout')
+def logout():
+    """Log user out of session."""
+
+    del session['email']
+    flash("Successfully logged out")
+        
+    return redirect('/')
 
 
 if __name__ == '__main__':

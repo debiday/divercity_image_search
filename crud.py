@@ -7,12 +7,15 @@ from datetime import datetime
 def create_user(email, password):
     """Create and return a new user."""
 
-    user = User(email=email, password=password)
+    new_user = User(email=email, password=password)
 
-    db.session.add(user)
+    db.session.add(new_user)
     db.session.commit()
 
-    return user
+    return new_user
+
+# def create_collection():
+#     """Create and return a collection"""
 
 
 def get_users():
@@ -59,6 +62,8 @@ def create_collection(user_id, notes, date_saved=datetime.today()):
 # TODO: Fix this function
 def get_pictures():
     """Return all pictures in collection."""
+
+
 
     return Pictures.query.all()
 
