@@ -20,7 +20,7 @@ class User(db.Model):
     password = db.Column(db.String(50), nullable=False)
 
     def __repr__(self):
-        return f"<User user_id={self.user_id} email={self.email}>"
+        return f'<User user_id={self.user_id} email={self.email}>'
 
 
 class Collection(db.Model):
