@@ -96,6 +96,12 @@ export API_SECRET="xxxxx"`
 10. `python3 seed.py` to set up database
 11. `python3 server.py` to launch and view on (http://localhost:5000/)! 
 
+### Run Tests
+
+1. `python3 test.py` to see individual tests
+2. `coverage run --source=. --omit="env/*" test.py` to not test test.py file
+2. `coverage report -m` to see a report
+
 <!-- CONTACT -->
 ## Contact
 
