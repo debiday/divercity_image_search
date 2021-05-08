@@ -41,19 +41,17 @@ To sign up as
 
 * Python
 * Javascript
-* React
 * Flask
 * Jinja
 * SQLalchemy
 * postgreSQL
 
 APIs
-* [Mapbox](https://docs.mapbox.com/api/overview/)
+* [Flickr](https://docs.mapbox.com/api/overview/)
 
 
 Front-end
 * Javascript
-* React
 * JQuery
 * AJAX
 * Bootstrap
@@ -62,46 +60,39 @@ Front-end
 
 <!-- ROADMAP -->
 ## Roadmap
-### MVP(Current)
+### MVP
 Users are able to query for images of people based on city. 
 
-### 1.0
+### 1.0 - Current
+* Create a search bar that allow user to search for people in a specific city
+* Allow users to log into their own account to save pictures
 
+### 2.0
+* Allow users to save pictures to a specific collection
+* Create functionality to add/delete photos for a curated collection
+* Add google's autocomplete API for places
 
-### 2.0 (Current)
+### 3.0 - The future
+* Create resources for user to reach out to photographers
+* Integrate API for stock photos (which aren't as diverse)
+* Give users the choice to pay for licensed photos
+* Allow users to share their collections with other users
 
-
-### 3.0
-A community forum for
-
-<!-- USAGE EXAMPLES -->
-## Usage
-
-You may like to use the data or view the data behind the visualizations which was accessed from 
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-### Prerequisites
-
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
-
+<!-- Installation -->
 ### Installation
 
-1. Clone the repo
-   ```sh
-   git clone https://github.com/debiday/Divercity.git
-   ```
-2. Install NPM packages
-   ```sh
-   npm install
-   ```
+1. `git clone` this repository 
+2. `cd divercity` to go to the directory
+3. `virtualenv env` to create a virtual environment
+4. `source env/bin/activate` to activate it
+5. `pip3 install -r requirements.txt` to install required packages
+6. Sign up for an API key at [flickr API] https://www.flickr.com/services/apps/create/noncommercial/? (You can enter "demo" for both boxes)
+7. Create a new file called  `secrets.sh` in the Divercity directory
+8. Save your API in this format `export API_KEY="xxxxx"
+export API_SECRET="xxxxx"`
+9. `source secrets.sh` back in the terminal
+10. `python3 seed.py` to set up database
+11. `python3 server.py` to launch and view on (http://localhost:5000/)! 
 
 <!-- CONTACT -->
 ## Contact
@@ -113,9 +104,15 @@ Project Link: [https://github.com/debiday/Divercity](https://github.com/debiday/
 
 
 <!-- ACKNOWLEDGEMENTS -->
-## Acknowledgements
+## Project for Fall 2021 Shopify Developer Internship
 
-* []()
+Fulfilled requirements of 
+
+* Building an image repository 
+* Including tests
+* A search function from text
+* Able to add image(s) to the repository
+* Secure uploading and stored images with sessions
 
 
 

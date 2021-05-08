@@ -2,7 +2,9 @@ import model
 import flask
 import crud
 import server
+import os
 from unittest import TestCase
+from model import User, Collection, Picture, connect_to_db, db
 
 # class ChildTestCase(TestCase):
     
@@ -13,6 +15,28 @@ from unittest import TestCase
 
 class FlaskIntegrationTestCase(TestCase):
     """Testing flask server"""
+    def setUp(self):
+        """Stuff to do before every test."""
+
+    # Get the Flask test client
+    client = server.app.test_client()
+
+    # Show Flask errors that happen during tests
+    server.app.config['TESTING'] = True
+
+    # Connect to test database
+    connect_to_db(server.app, "postgresql:///testdb")
+
+    # Create tables
+    db.create_all()
+
+
+    def tearDown(self):
+        """Do at end of every test."""
+
+        db.session.close()
+        db.drop_all()
+
 
     def test_homepage(self):
         client = server.app.test_client()
@@ -24,12 +48,14 @@ class FlaskIntegrationTestCase(TestCase):
         result = client.post('/save-city', data={'city': 'california'})
         self.assertIn(b"https://www.flickr.com/", result.data)
 
-    def test_create_user(self):
+    # def test_create_user(self):
         
     
 
 if __name__ == "__main__":
-    #if called like a script, run our tests
     import unittest
+
+    os.system('dropdb testdb')
+    os.system('createdb testdb')
 
     unittest.main(verbosity=2)
