@@ -11,16 +11,17 @@ import flickrapi
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
-app.secret_key = os.environ["FLASK_KEY"]
+app.secret_key = "placeholderkey"
+#for production replace "placeholderkey" with os.environ["FLASK_KEY"]
 app.jinja_env.undefined = StrictUndefined
 
-# <------------FLICKR API------------>
 
+# <!--------------------------------------------------------------->
+# <--Search with Flickr API -->
+# <!--------------------------------------------------------------->
 api_key = os.environ["API_KEY"]
 api_secret = os.environ["API_SECRET"]
 
-
-# <---------------------------------->
 
 @app.route('/')
 def homepage():
@@ -41,9 +42,6 @@ def save_tracking():
 
     return final_url
     
-
-
-
 
 # <!--------------------------------------------------------------->
 # <--Routes for User -->
