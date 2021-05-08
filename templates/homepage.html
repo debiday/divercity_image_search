@@ -9,6 +9,8 @@
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Divercity</a></div>
+        <div class="navbar-header">
+          <a class="nav navbar-nav navbar-left" href="#" style="padding-left: -500px;">How to use images</a></div>
       <div class="nav navbar-nav navbar-right">
         <form action="/login" class="navbar-form navbar-left" id="login-form" method="POST">
           <div class="form-group">
@@ -71,7 +73,47 @@
       </body>
             
     <!-- <------------FLICKR API------------>
-  
+
+        <h2>Modal Signup Form</h2>
+        <!--Step 1:Adding HTML-->
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Register</button>
+     
+        <div id="id01" class="modal">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
+            <form class="modal-content animate" action="/newusers" method="post">
+                <div class="container">
+                    <label><b>Email</b></label>
+                    <input type="text" placeholder="Enter Email" name="email" id="email" required>
+     
+                    <label><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="password" id="password" required>
+     
+                    <input type="checkbox"> Remember me
+     
+                    <div class="clearfix">
+                        <button type="submit" class="signupbtn">Register</button>
+                    <div class="container signin">
+                      <p>Already have an account? <a href="/">Sign in</a>.</p>
+                    </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+     
+        <!--close the modal by just clicking outside of the modal-->
+        <script>
+            var modal = document.getElementById('id01');
+     
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+     
+    </body>
+     
+    </html>
   
 {% endblock %}
 
