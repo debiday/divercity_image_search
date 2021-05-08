@@ -26,11 +26,11 @@ function returnResults(evt) {
     $.post(url, savedData, (response) => {
 
 
-        let city = response;
+        let final_url = response;
 
-        let url_front = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=4f2a9c7f2ea592f840664a1486e37348&text=%22";
-        let url_back = "+people%22&per_page=100&format=json&nojsoncallback=1";
-        let final_url = url_front.concat(city, url_back);
+        // let url_front = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=4f2a9c7f2ea592f840664a1486e37348&text=%22";
+        // let url_back = "+people%22&per_page=100&format=json&nojsoncallback=1";
+        // let final_url = url_front.concat(city, url_back);
 
 
         let settings = {
@@ -48,7 +48,7 @@ function returnResults(evt) {
 
         document.getElementById('flickr').replaceChildren();
  
-        $("#galleryTitle").append(response+" ");
+        $("#galleryTitle").append(savedData["city"]+" ");
         $.each( data.photos.photo, function( i, gp ) {
 
                 let farmId = gp.farm;

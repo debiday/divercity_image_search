@@ -35,7 +35,11 @@ def save_tracking():
 
     city = request.form.get('city')
 
-    return city
+    url_front = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=4f2a9c7f2ea592f840664a1486e37348&text=%22";
+    url_back = "+people%22&per_page=100&format=json&nojsoncallback=1";
+    final_url = f'{url_front}{city}{url_back}'
+
+    return final_url
     
 
 

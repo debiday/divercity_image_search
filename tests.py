@@ -14,15 +14,18 @@ from unittest import TestCase
 class FlaskIntegrationTestCase(TestCase):
     """Testing flask server"""
 
-    def test_index(self):
+    def test_homepage(self):
         client = server.app.test_client()
         result = client.get('/')
         self.assertIn(b'<h1 style="text-align: center;">Welcome!</h1>', result.data)
 
-    def test_return_images(self):
+    def test_return_url(self):
         client = server.app.test_client()
         result = client.post('/save-city', data={'city': 'california'})
-        self.assertIn(b"california", result.data)
+        self.assertIn(b"https://www.flickr.com/", result.data)
+
+    def test_create_user(self):
+        
     
 
 if __name__ == "__main__":
