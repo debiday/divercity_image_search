@@ -3,7 +3,10 @@
 
 {% block body %}
 
-
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="static/js/returnResult.js"></script>  
+  </head>
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -68,9 +71,7 @@
 
 
   <!-- <------------FLICKR API------------>
-    <head>
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
-      </head>
+
       
       
       <style>
@@ -94,14 +95,14 @@
         <h2><div id="galleryTitle"></div></h2>
         <div style="clear:both;"/>
 
-      <form name-="image-form" action="/save_images"> 
+      <form name="image-form" action="/save_images" method="POST"> 
         <div id="flickr"/>
       </div>
       <a href="#" onclick="image-results.submit(); return false;">Save to account</a>
     </form> 
     <!-- TODO: Make a large vertical button instead. -->
 
-      <script src="static/js/returnResult.js"></script>
+    
             
     <!-- <------------FLICKR API------------>
 

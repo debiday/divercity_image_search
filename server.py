@@ -111,6 +111,23 @@ def user_page():
     return render_template('account-page.html', user=user)
   return redirect('/')
 
+@app.route('/save_images', methods=['POST'])
+def save_images():
+  """Save images from form."""
+
+  print ("save images function hello")
+  save_images_count = 0
+  saved_images = request.form.get('1')
+  if saved_images == True :
+    save_images_count += 1
+  else :
+    pass
+  print(save_images_count)
+  return save_images_count
+
+
+
+
 
 # @app.route('/create-saved-picture', methods=["POST"])
 # def create_picture():
