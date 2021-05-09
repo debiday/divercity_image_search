@@ -50,8 +50,8 @@ def save_tracking():
 def register_user():
   """Saves user information to database"""
   
-  email = request.form.get('email')
-  password = request.form.get('password')
+  email = request.form.get('register-email')
+  password = request.form.get('register-password')
 
   user = crud.get_user_by_email(email)
 

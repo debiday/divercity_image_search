@@ -49,7 +49,7 @@ class FlaskIntegrationTests(TestCase):
         self.assertEqual(result.status_code, 200)
         self.assertIn(b'<h1 style="text-align: center;">Welcome!</h1>', result.data)
 
-    def test_return_url(self):
+    def test_return_images(self):
         """Check images load with user input."""
 
         client = app.test_client()
