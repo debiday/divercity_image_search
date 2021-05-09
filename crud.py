@@ -33,11 +33,11 @@ def get_user_by_email(email):
 def get_collections():
     """Return all collections."""
 
-    return Collections.query.all()
+    return Collection.query.all()
 
 
 def get_collection_by_id(collection_id):
-    """Return a movie by primary key."""
+    """Return a collection by primary key."""
 
     return Collection.query.get(collection_id)
 
@@ -62,11 +62,29 @@ def create_picture(collection_id, url):
 
     return new_picture
 
+
+def get_collection_by_email(email):
+    """Return all collections belonging to a user"""
+    
+    user_collection = Collection.query.join(User)
+
+    return user_collection.filter(User.email == email).all()
+
 # TODO: Fix this function
-def get_pictures():
+def get_pictures_by_collection():
     """Return all pictures in collection."""
 
     return Pictures.query.all()
+
+
+
+
+# def get_user_id_by_email(email):
+#     """Return a user id by email."""
+
+#     user_query = Tracking.query.join(User)
+
+#     return user_query.filter(User.email == email).all()
 
 # <-----Test CRUD Functions----->
 # def get_photos(image_tag):
