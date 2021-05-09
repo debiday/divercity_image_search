@@ -16,7 +16,7 @@
     <form action="/account-page" method="get" >
         <button id="tracking-top-button" type="submit">My Saved Collections</button></form>
     </div>
-    
+
   <!-- <------------FLICKR API------------>   
   <div id="city-search">
       <form name="city-form" id="city-form" action="/save-city" method="POST">
@@ -34,13 +34,13 @@
         <h2><div id="galleryTitle"></div></h2>
         <div style="clear:both;"/>
 
-      <form name="image-form" action="/save_images" method="POST"> 
+      <form name="image-form" id="image-form" action="/save_images" method="POST"> 
         <div id="flickr"/></div>
         <p>Logged in?</p>
         <input type="submit" value="Save to account">
     </form> 
     <!-- TODO: Make a large vertical button instead. -->
-            
+    <script src="static/js/saveImages.js"></script>        
     <!-- <------------FLICKR API------------>
 
 

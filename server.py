@@ -29,20 +29,6 @@ def homepage():
 
     return render_template('homepage.html')
 
-
-@app.route('/save-city', methods=['POST'])
-def save_tracking():
-    """Save user input from html form"""
-
-    city = request.form.get('city')
-
-    url_front = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=4f2a9c7f2ea592f840664a1486e37348&text=%22";
-    url_back = "+people%22&per_page=100&format=json&nojsoncallback=1";
-    final_url = f'{url_front}{city}{url_back}'
-
-    return final_url
-
-
 # <!--------------------------------------------------------------->
 # <--Routes for User -->
 # <!--------------------------------------------------------------->
@@ -112,6 +98,20 @@ def logout():
 # <!--------------------------------------------------------------->
 # <--Routes for Account Page -->
 # <!--------------------------------------------------------------->
+@app.route('/save-city', methods=['POST'])
+def save_tracking():
+    """Save user input from html form"""
+
+    city = request.form.get('city')
+
+    url_front = "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=4f2a9c7f2ea592f840664a1486e37348&text=%22";
+    url_back = "+people%22&per_page=100&format=json&nojsoncallback=1";
+    final_url = f'{url_front}{city}{url_back}'
+
+    return final_url
+
+
+
 @app.route('/account-page')
 def collections_page():
   """Show user's account-page."""
@@ -123,45 +123,41 @@ def collections_page():
     return render_template('account-page.html', user=user)
   return redirect('/')
 
-# # TODO: Fix these two crucial routes
-# @app.route('/save_collection', methods=['POST'])
-# def save_collection():
-#   """Create and return a new collection."""
+# TODO: Fix these two crucial routes
+@app.route('/save-images', methods=["POST"])
+def save_collection():
+  """Saves user notes to db."""
 
-#   user_id = request.form.get('user_id')
-#   date_saved = request.form.get('date_saved')
-#   notes = request.form.get('notes')
+  user_id = request.form.get('user_id')
+  date_saved = request.form.get('date_saved')
+  notes = request.form.get('notes')
+
+  new_collection = crud.create_collection(user_id=user_id, date_saved=date_saved, notes=notes)
   
+  if new_collection:
+    flash("Your images have been saved in your saved searches.")
+
+  return "Your images have been saved in your saved searches."
+  # return redirect('/tracking-page')
+
+
+# @app.route('/save_images', methods=['POST'])
+# def save_images():
+#   """Create and return new pictures."""
+
 #   if 'email' in session:
 #     user = crud.get_user_by_email(session['email'])
 #     new_collection = Collection(user_id=user_id, date_saved=date_saved, notes=notes)
-  
-#       db.session.add(new_collection)
-#       db.session.commit()
-  
 #   return new_collection
 
-
-
-
-@app.route('/save_images', methods=['POST'])
-def save_images():
-  """Create and return new pictures."""
-
-  if 'email' in session:
-    user = crud.get_user_by_email(session['email'])
-    new_collection = Collection(user_id=user_id, date_saved=date_saved, notes=notes)
-  return new_collection
-
-  if request.method == 'POST':
-      collection_id = request.form.get('collection_id')
-      image_list = request.form.getlist('selected')
+#   if request.method == 'POST':
+#       collection_id = request.form.get('collection_id')
+#       image_list = request.form.getlist('selected')
     
-    
-    # for url in image_list:
-    #   save_picture = crud.create_picture(collection_id, url)
-      return str(image_list)
-  return "Please log in to save this collection."
+#     # for url in image_list:
+#     #   save_picture = crud.create_picture(collection_id, url)
+#       return str(image_list)
+#   return "Please log in to save this collection."
   
 # <_______________working____________________>
 

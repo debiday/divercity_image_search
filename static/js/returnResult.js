@@ -3,12 +3,13 @@
 console.log("i am saving input!");
 
 function returnResults(evt) {
-    console.log('hello input function');
+    console.log('hello search function');
 
     evt.preventDefault();
 
-    let today = new Date();
-    let date_saved = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
+//     let today = new Date();
+//     let date_saved = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
+
     // //Get email
     // let email = $('#user-email').text()
 
@@ -17,15 +18,16 @@ function returnResults(evt) {
 
 
     let url = "/save-city";
-    let response = "hello response"
-    //saves values from the front end and sends it to server
+
     let savedData = {
                     //  'user_id': user_id,
                      'city': $('#user-city').val(),
-                     'date_saved': date_saved,
-                     'notes': $('#user-city').val(),
+                //      'user_id': $('#user-id').text(),
+                //      'date_saved': date_saved,
+                //      'notes': $('#user-city').val(),
                     //  'email': email
                     };
+
 
     $.post(url, savedData, (response) => {
 
@@ -72,9 +74,11 @@ function returnResults(evt) {
 
         });
         });
-
+        $("#image-form").on("submit", saveImages);
         });
 }
 
 $("#city-form").on("submit", returnResults);
+
+
 // $("#city-form").reload(true);
