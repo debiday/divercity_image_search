@@ -142,9 +142,16 @@ class FlaskTestsLoggedIn(TestCase):
 
 
     def test_get_collection_by_email(self):
-        """Check collection by email returns all collections"""
+        """Check query by email returns all collections"""
 
         self.assertEqual(str(crud.get_collection_by_email("user@user.com")), "[<Collection collection_id=1 user=1>]")
+
+
+    def test_get_pictures_by_collection(self):
+        """Check query by collections returns all pictures"""
+
+        self.assertEqual(str(crud.get_pictures_by_collection(1)), "[<Picture picture_id=1 URL=google.com>]")
+
 
 
     def test_create_collection(self):

@@ -71,10 +71,12 @@ def get_collection_by_email(email):
     return user_collection.filter(User.email == email).all()
 
 # TODO: Fix this function
-def get_pictures_by_collection():
+def get_pictures_by_collection(collection_id):
     """Return all pictures in collection."""
 
-    return Pictures.query.all()
+    collection_pictures = Picture.query.join(Collection)
+
+    return collection_pictures.filter(Collection.collection_id == collection_id).all()
 
 
 
