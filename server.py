@@ -46,13 +46,6 @@ def save_tracking():
 # <!--------------------------------------------------------------->
 # <--Routes for User -->
 # <!--------------------------------------------------------------->
-@app.route('/registration')
-def show_registration():
-    """Show registration page."""
-
-    return render_template("registration.html")
-
-
 @app.route('/newusers', methods = ["POST"])
 def register_user():
   """Saves user information to database"""

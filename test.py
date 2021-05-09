@@ -57,13 +57,6 @@ class FlaskIntegrationTests(TestCase):
         self.assertEqual(result.status_code, 200)
         self.assertIn(b"https://www.flickr.com/", result.data)
 
-    # def test_user_creation(self):
-    #     client = app.test_client()
-    #     result = client.post('/newusers', data={'email': 'test@user.com',
-    #                                             'password': 'test1',                    
-    #                                             })
-    #     self.assertIn(b"!", result.data)
-
     def test_create_user(self):
         """Check user creation."""
 
@@ -72,7 +65,7 @@ class FlaskIntegrationTests(TestCase):
                                         'password': 'test1'},
                                   follow_redirects=True)
         self.assertEqual(result.status_code, 200)
-        self.assertIn(b'Please', result.data) 
+        self.assertIn(b'account has been created', result.data) 
         
 
 class LoggedIn(TestCase):
@@ -90,24 +83,12 @@ class LoggedIn(TestCase):
         db.create_all()
         example_data()
 
-
-
     def tearDown(self):
         """Stuff to do after each test."""
 
         db.session.remove()
         db.drop_all()
         db.engine.dispose()
-
-
-    # def test_login(self):
-    #     """Check account page loads."""
-    #     result = self.client.post('/account-page', 
-    #                               data={'email': 'user2@user.com',
-    #                                     'password': 'test2'},
-    #                               follow_redirects=True)
-    #     self.assertEqual(result.status_code, 200)
-    #     self.assertIn(b'Logout', result.data)
 
     def test_login(self):
         """Test login to account"""
@@ -118,7 +99,8 @@ class LoggedIn(TestCase):
                                   follow_redirects=True)
         self.assertEqual(result.status_code, 200)
         self.assertIn(b'<div id="image-results">', result.data)
-    
+
+
 
 if __name__ == "__main__":
     import unittest
