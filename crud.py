@@ -45,18 +45,26 @@ def get_collection_by_id(collection_id):
 def create_collection(user_id, notes, date_saved=datetime.today()):
     """Create and return a new rating."""
 
-    new_collection = Collection(user_id=user_id, notes=notes, date_time=date_time)
+    new_collection = Collection(user_id=user_id, notes=notes, date_saved=date_saved)
 
     db.session.add(new_collection)
     db.session.commit()
 
     return new_collection
 
+def create_picture(collection_id, url):
+    """Create and return a new picture."""
+
+    new_picture = Picture(collection_id=collection_id, url=url)
+
+    db.session.add(new_picture)
+    db.session.commit()
+
+    return new_picture
+
 # TODO: Fix this function
 def get_pictures():
     """Return all pictures in collection."""
-
-
 
     return Pictures.query.all()
 

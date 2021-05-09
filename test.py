@@ -16,6 +16,10 @@ def example_data():
     db.session.commit()
 
 
+
+
+
+
 class FlaskIntegrationTests(TestCase):
     """Testing flask server"""
 
@@ -61,11 +65,13 @@ class FlaskIntegrationTests(TestCase):
         """Check user creation."""
 
         result = self.client.post('/newusers',
-                                  data={'email': 'user1@user.com',
-                                        'password': 'test1'},
+                                  data={'register-email': 'user1@user.com',
+                                        'register-password': 'test1'},
                                   follow_redirects=True)
         self.assertEqual(result.status_code, 200)
         self.assertIn(b'account has been created', result.data) 
+
+    
         
 
 class LoggedIn(TestCase):
@@ -99,7 +105,17 @@ class LoggedIn(TestCase):
                                   follow_redirects=True)
         self.assertEqual(result.status_code, 200)
         self.assertIn(b'<div id="image-results">', result.data)
+    
+    def test_create_collection(self):
+        """Check collection creation"""
 
+        self.assertEqual(str(crud.create_collection(1, "notes", "01/01/2021")), "<Collection collection_id=1 user=1>")
+
+    def test_create_picture(self):
+        """Check picture creation"""
+
+        crud.create_collection(1, "notes", "01/01/2021")
+        self.assertEqual(str(crud.create_picture(1, "google.com")), "<Picture picture_id=1 URL=google.com>")
 
 
 if __name__ == "__main__":

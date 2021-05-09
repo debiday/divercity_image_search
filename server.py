@@ -112,6 +112,39 @@ def user_page():
   return redirect('/')
 
 
+# @app.route('/create-saved-picture', methods=["POST"])
+# def create_picture():
+#   """Saves images to db."""
+
+#   collection_id = request.form.get('collection_id')
+#   url = request.form.get('url')
+
+#   new_picture = crud.create_picture(collection_id, url)
+
+#   return new_picture
+
+# @app.route('/create-saved-picture', methods=["POST"])
+# def create_picture():
+#   """Saves images to db."""
+
+#   collection_id = request.form.get('collection_id')
+#   url = request.form.get('url')
+
+#   new_picture = crud.create_picture(collection_id, url)
+
+#   return new_picture
+
+  # TODO: In AJAX event listener?
+  # for __ in ____, 
+  #   new_picture = crud.create_picture(collection_id, url)
+  
+
+
+  # if new_collection:
+  #   flash("Your images have been saved in your collection.")
+
+  # return "Your images have been saved in your collection."
+
 
 if __name__ == '__main__':
     connect_to_db(app)
