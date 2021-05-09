@@ -115,18 +115,29 @@ def user_page():
 def save_images():
   """Save images from form."""
 
-  print ("save images function hello")
-  save_images_count = 0
-  saved_images = request.form.get('1')
-  if saved_images == True :
-    save_images_count += 1
-  else :
-    pass
-  print(save_images_count)
-  return save_images_count
+  collection_id = request.form.get('collection_id')
+
+  if request.method == 'POST':
+    image_list = request.form.getlist('selected')
+  
+  # for url in image_list:
+  #   save_picture = crud.create_picture(collection_id, url)
+  return str(image_list)
+
+  
+
+  # save_images_count = 0
+  # saved_images = request.form.get('selected')
+  # print(saved_images)
+  # if saved_images == True :
+  #   save_images_count += 1
+  # else :
+  #   pass
+  # print(save_images_count)
+  return redirect
 
 
-
+ 
 
 
 # @app.route('/create-saved-picture', methods=["POST"])
