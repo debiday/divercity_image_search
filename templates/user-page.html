@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Image Search Logged In{% endblock %}
+
+{% block body %}
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
+</head>
+
+    <h1 style="text-align: center;">Welcome!</h1>
+    <div style="text-align:center;">
+        <h8><p id="user-id"style="color:black;">{{ user.user_id }}</p></h8>
+        <p><h5>Good to see you, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
+    </div>
+
+  <!-- <------------FLICKR API------------>   
+  <div id="city-search">
+      <form name="city-form" id="city-form" action="/save-city" method="POST">
+        <!-- style="text-align: center; width: 100%; -->
+        <label><h3>Find images of people from a particular city or country.</h3></label>
+        <br>
+          <input name="user-city" id="user-city" placeholder="Place" type="text">
+          <button id="find-button" type="submit">Find</button>
+      </form>
+  </div>
+      
+      <script src="static/js/returnResult.js"></script>
+      
+      <div id="image-results">
+        <h2><div id="galleryTitle"></div></h2>
+        <div style="clear:both;"/>
+
+      <form name="image-form" action="/save_images" method="POST"> 
+        <div id="flickr"/></div>
+        <p>Logged in?</p>
+        <input type="submit" value="Save to account">
+    </form> 
+    <!-- TODO: Make a large vertical button instead. -->
+            
+    <!-- <------------FLICKR API------------>
+
+
+{% endblock %}
+
+

@@ -7,6 +7,8 @@ function returnResults(evt) {
 
     evt.preventDefault();
 
+    let today = new Date();
+    let date_saved = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
     // //Get email
     // let email = $('#user-email').text()
 
@@ -19,7 +21,9 @@ function returnResults(evt) {
     //saves values from the front end and sends it to server
     let savedData = {
                     //  'user_id': user_id,
-                     'city': $('#user-city').val()
+                     'city': $('#user-city').val(),
+                     'date_saved': date_saved,
+                     'notes': $('#user-city').val(),
                     //  'email': email
                     };
 

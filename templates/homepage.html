@@ -71,7 +71,7 @@
   </nav>
 
 
-    <h1 style="text-align: center;">Welcome!</h1>
+    <h1 style="text-align: center;">Try out the Divercity app!</h1>
 
 
   <!-- <------------FLICKR API------------>   
@@ -90,32 +90,9 @@
       <div id="image-results">
         <h2><div id="galleryTitle"></div></h2>
         <div style="clear:both;"/>
-
-      <form name="image-form" action="/save_images" method="POST"> 
         <div id="flickr"/></div>
-        <input type="submit" value="Save to account">
-    </form> 
-    <!-- TODO: Make a large vertical button instead. -->
             
     <!-- <------------FLICKR API------------>
-
-    <script type="text/javascript">  
-      function ValidatePetSelection()  
-      {  
-          var checkboxes = document.getElementsByName("selected");  
-          var numberOfCheckedItems = 0;  
-          for(var i = 0; i < checkboxes.length; i++)  
-          {  
-              if(checkboxes[i].checked)  
-                  numberOfCheckedItems++;  
-          }  
-          if(numberOfCheckedItems > 2)  
-          {  
-              alert("You can't select more than two favorite pets!");  
-              return false;  
-          }  
-      }  
-      </script>
 
 
 {% endblock %}

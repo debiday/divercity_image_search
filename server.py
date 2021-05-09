@@ -63,6 +63,18 @@ def register_user():
     flash('Your account has been created! Please log in.')
 
   return redirect('/')
+
+
+@app.route('/user-page')
+def user_page():
+  """Show user's search-page."""
+  # Removes ability to access this page if not logged in
+  if 'email' in session:
+    user = crud.get_user_by_email(session['email'])
+    # session["email"] = email
+
+    return render_template('user-page.html', user=user)
+  return redirect('/')
   
 
 @app.route('/login', methods = ['POST'])
@@ -84,7 +96,7 @@ def submit_login_form():
     flash('Logged in!')
     session['email'] = user.email
 
-    return redirect('/account-page')
+    return redirect('/user-page')
 
 
 @app.route('/logout')
@@ -101,7 +113,7 @@ def logout():
 # <--Routes for Account Page -->
 # <!--------------------------------------------------------------->
 @app.route('/account-page')
-def user_page():
+def collections_page():
   """Show user's account-page."""
   # Removes ability to access this page if not logged in
   if 'email' in session:
@@ -111,20 +123,47 @@ def user_page():
     return render_template('account-page.html', user=user)
   return redirect('/')
 
+# # TODO: Fix these two crucial routes
+# @app.route('/save_collection', methods=['POST'])
+# def save_collection():
+#   """Create and return a new collection."""
+
+#   user_id = request.form.get('user_id')
+#   date_saved = request.form.get('date_saved')
+#   notes = request.form.get('notes')
+  
+#   if 'email' in session:
+#     user = crud.get_user_by_email(session['email'])
+#     new_collection = Collection(user_id=user_id, date_saved=date_saved, notes=notes)
+  
+#       db.session.add(new_collection)
+#       db.session.commit()
+  
+#   return new_collection
+
+
+
+
 @app.route('/save_images', methods=['POST'])
 def save_images():
-  """Save images from form."""
+  """Create and return new pictures."""
 
-  collection_id = request.form.get('collection_id')
+  if 'email' in session:
+    user = crud.get_user_by_email(session['email'])
+    new_collection = Collection(user_id=user_id, date_saved=date_saved, notes=notes)
+  return new_collection
 
   if request.method == 'POST':
-    image_list = request.form.getlist('selected')
+      collection_id = request.form.get('collection_id')
+      image_list = request.form.getlist('selected')
+    
+    
+    # for url in image_list:
+    #   save_picture = crud.create_picture(collection_id, url)
+      return str(image_list)
+  return "Please log in to save this collection."
   
-  # for url in image_list:
-  #   save_picture = crud.create_picture(collection_id, url)
-  return str(image_list)
-
-  
+# <_______________working____________________>
 
   # save_images_count = 0
   # saved_images = request.form.get('selected')
@@ -134,7 +173,7 @@ def save_images():
   # else :
   #   pass
   # print(save_images_count)
-  return redirect
+  # return redirect
 
 
  
