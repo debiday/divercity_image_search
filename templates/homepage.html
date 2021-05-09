@@ -93,8 +93,13 @@
       <div id="image-results">
         <h2><div id="galleryTitle"></div></h2>
         <div style="clear:both;"/>
+
+      <form name-="image-form" action="/save_images"> 
         <div id="flickr"/>
       </div>
+      <a href="#" onclick="image-results.submit(); return false;">Save to account</a>
+    </form> 
+    <!-- TODO: Make a large vertical button instead. -->
 
       <script src="static/js/returnResult.js"></script>
             
