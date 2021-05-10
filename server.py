@@ -1,7 +1,7 @@
 """Server for image app."""
 
 from flask import (Flask, render_template, request, flash, session,
-                   redirect)
+                   redirect, jsonify)
 from model import connect_to_db
 import crud
 import json
@@ -126,76 +126,51 @@ def collections_page():
 # TODO: Fix these two crucial routes
 @app.route('/save-images', methods=["POST"])
 def save_collection():
-  """Saves user notes to db."""
+  """Creates and returns a collection to database."""
 
   user_id = request.form.get('user_id')
   date_saved = request.form.get('date_saved')
   notes = request.form.get('notes')
 
   new_collection = crud.create_collection(user_id=user_id, date_saved=date_saved, notes=notes)
-  
+
+  # collection_id = new_collection[collection_id]
+  # print("****finding collection id****")
+  # print(collection_id)
+  collection_str = str(new_collection)
+  collection_id = int(collection_str[26:29])
+  print("******collection id*******")
+  print(collection_id)
+
+
   if new_collection:
     flash("Your images have been saved in your saved searches.")
 
-  return "Your images have been saved in your saved searches."
+  return 'done'
+  # return redirect
   # return redirect('/tracking-page')
+  # if request.method == 'POST':
+  #   image_list = request.form.getlist('selected')
+  #   print(image_list)
+  # return 'done'
+
+  # new_pictures = crud.create_picture(collection_id=collection_id, url=url)
 
 
-# @app.route('/save_images', methods=['POST'])
+# @app.route('/save-images', methods=["POST"])
 # def save_images():
 #   """Create and return new pictures."""
 
-#   if 'email' in session:
-#     user = crud.get_user_by_email(session['email'])
-#     new_collection = Collection(user_id=user_id, date_saved=date_saved, notes=notes)
-#   return new_collection
-
 #   if request.method == 'POST':
-#       collection_id = request.form.get('collection_id')
-#       image_list = request.form.getlist('selected')
+#       print(request.form.getlist('selected'))
+#       return 'Done!'
     
 #     # for url in image_list:
 #     #   save_picture = crud.create_picture(collection_id, url)
-#       return str(image_list)
-#   return "Please log in to save this collection."
-  
+#   return redirect
+
 # <_______________working____________________>
 
-  # save_images_count = 0
-  # saved_images = request.form.get('selected')
-  # print(saved_images)
-  # if saved_images == True :
-  #   save_images_count += 1
-  # else :
-  #   pass
-  # print(save_images_count)
-  # return redirect
-
-
- 
-
-
-# @app.route('/create-saved-picture', methods=["POST"])
-# def create_picture():
-#   """Saves images to db."""
-
-#   collection_id = request.form.get('collection_id')
-#   url = request.form.get('url')
-
-#   new_picture = crud.create_picture(collection_id, url)
-
-#   return new_picture
-
-# @app.route('/create-saved-picture', methods=["POST"])
-# def create_picture():
-#   """Saves images to db."""
-
-#   collection_id = request.form.get('collection_id')
-#   url = request.form.get('url')
-
-#   new_picture = crud.create_picture(collection_id, url)
-
-#   return new_picture
 
   # TODO: In AJAX event listener?
   # for __ in ____, 
