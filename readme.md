@@ -25,15 +25,17 @@
 ## About The Project
 
 **Register**
-![Front-page](https://github.com/Debiday/Divercity/blob/master/static/images/d1.gif)
+<img src="https://github.com/Debiday/Divercity/blob/master/static/images/d1.gif" width="400">
+
 
 **Search**
 Users can search for images and save them to a collection.
-![Image-search](https://github.com/Debiday/Divercity/blob/master/static/images/d2.gif)
+<img src="https://github.com/Debiday/Divercity/blob/master/static/images/d2.gif" width="400">
+
 
 **Save**
 Users can revisit their curated collections.
-![Image-save](https://github.com/Debiday/Divercity/blob/master/static/images/d3.gif)
+<img src="https://github.com/Debiday/Divercity/blob/master/static/images/d3.gif" width="400">
 
 
 This project envisions a more diverse selection of images that more accurately represent people who live in a city. This API produces a notably better selection of photos compared to many stock photo providers. While there is copyright issues with Flickr's photos, users can opt to personally contact the photographers, or use this as a visual resource to understand the cultural diversity of places.
