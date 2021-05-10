@@ -30,13 +30,13 @@
 
 
 **Search**
-Users can search for images and save them to a collection.
+* Users can search for images and save them to a collection.
 ![Image-search](https://github.com/Debiday/Divercity/blob/master/static/images/d2.gif)
 
 
 
 **Save**
-Users can revisit their curated collections.
+* Users can revisit their curated collections.
 ![Image-save](https://github.com/Debiday/Divercity/blob/master/static/images/d3.gif)
 
 
