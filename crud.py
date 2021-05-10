@@ -43,7 +43,7 @@ def get_collection_by_id(collection_id):
 
 
 def create_collection(user_id, notes, date_saved=datetime.today()):
-    """Create and return a new rating."""
+    """Create and return a new collection."""
 
     new_collection = Collection(user_id=user_id, notes=notes, date_saved=date_saved)
 

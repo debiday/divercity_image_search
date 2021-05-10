@@ -10,5 +10,13 @@
     <button id="tracking-top-button" type="submit">Forum</button></form>
   </div>
 
+<p><h5>Here are your collections, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
 
-{% endblock %}
+
+    {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %} 
+      <td id="{{ collection.collection_id }}" class="collection-id" width="200">{{ collection.collection_id }}</td>
+      <td width="200">{{ collection.date_saved }}</td>
+      <td width="200">{{ collection.notes }}</td>
+      {% endfor %}
+
+    {% endblock %}

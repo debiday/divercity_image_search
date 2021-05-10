@@ -119,7 +119,9 @@ def collections_page():
     user = crud.get_user_by_email(session['email'])
     # session["email"] = email
 
-    return render_template('account-page.html', user=user)
+    user_collection = crud.get_collection_by_email(session['email'])
+
+    return render_template('account-page.html', user=user, user_collection=user_collection)
   return redirect('/')
 
 # TODO: Fix these two crucial routes
@@ -153,18 +155,9 @@ def save_collection():
     flash("Your images have been saved in your saved searches.")
 
   return "Your images have been saved in your saved searches."
-# <___Working_____>
 
-  # if request.method == 'POST':
-  #     image_list = request.form.getlist('selected')
-  #     print(request.form.getlist('1'))
 
-  # # for url in image_list:
-  # #   save_picture = crud.create_picture(collection_id, url)
-  # return str(image_list)
-
-  # new_pictures = crud.create_picture(collection_id=collection_id, url=url)
-
+# <___Previous Working Python Solutions_____>
 
 # @app.route('/save-images', methods=["POST"])
 # def save_images():
@@ -178,19 +171,8 @@ def save_collection():
 #     #   save_picture = crud.create_picture(collection_id, url)
 #   return redirect
 
-# <_______________working____________________>
+# <_______for reference_______>
 
-
-  # TODO: In AJAX event listener?
-  # for __ in ____, 
-  #   new_picture = crud.create_picture(collection_id, url)
-  
-
-
-  # if new_collection:
-  #   flash("Your images have been saved in your collection.")
-
-  # return "Your images have been saved in your collection."
 
 
 if __name__ == '__main__':
