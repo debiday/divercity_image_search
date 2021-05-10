@@ -1,1 +1,22 @@
-<p> hello</p>
+{% extends 'base.html' %}
+{% block title %}Image Search Logged In{% endblock %}
+
+{% block body %}
+
+<div id="image-results">
+<form action="/collections" method="get" >
+    <button type="submit">Back to collections page</button>
+</form>
+<p>Here are your saved pictures</p>
+<div id="pictures-box"></div>
+
+
+
+{% for picture in collection_pictures %}
+    <img src="{{ picture.url }}" alt=people-picture width="400"></img>
+
+
+{% endfor %}
+</div>
+
+{% endblock %}

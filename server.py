@@ -96,7 +96,7 @@ def logout():
 
 
 # <!--------------------------------------------------------------->
-# <--Routes for Account Page -->
+# <--Routes for Collections Page -->
 # <!--------------------------------------------------------------->
 @app.route('/save-city', methods=['POST'])
 def save_tracking():
@@ -122,6 +122,9 @@ def save_collection():
 
   new_collection = crud.create_collection(user_id=user_id, date_saved=date_saved, notes=notes)
 
+  collection_str = str(new_collection)
+  collection_id = int(collection_str[26:29])
+
   url_list = urls.split(", ")
   for url in url_list:
     crud.create_picture(collection_id=collection_id, url=url)
@@ -132,9 +135,9 @@ def save_collection():
   return "Your images have been saved in your saved searches."
 
 
-@app.route('/account-page')
+@app.route('/collections')
 def collections_page():
-  """Show user's account-page and collections."""
+  """Show user's collections-page."""
   # Removes ability to access this page if not logged in
   if 'email' in session:
     user = crud.get_user_by_email(session['email'])
@@ -142,10 +145,23 @@ def collections_page():
 
     user_collection = crud.get_collection_by_email(session['email'])
 
-    return render_template('account-page.html', user=user, user_collection=user_collection)
+    return render_template('collections-page.html', user=user, user_collection=user_collection)
   return redirect('/')
 
+# TODO: Fix delete route
+@app.route('/delete_collection', methods=['POST'])
+def delete_collection():
+  """Delete collection from account."""
 
+  collection_id = request.form.get('collection_id')
+  crud.delete_collection(collection_id)
+  
+  return redirect('/collections') 
+
+
+# <!--------------------------------------------------------------->
+# <--Routes for Pictures Page -->
+# <!--------------------------------------------------------------->
 @app.route('/show-images', methods=["POST"])
 def show_full_collection():
   """Returns images in collection."""
@@ -157,11 +173,15 @@ def show_full_collection():
   return render_template('pictures.html', collection_pictures=collection_pictures)
 
 
+
 @app.route('/pictures')
 def pictures_from_collection():
     """View pictures from collection."""
 
     return render_template('pictures.html')
+
+
+
 
 # <___Previous Working Python Solutions_____>
 

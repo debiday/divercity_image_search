@@ -46,7 +46,7 @@ function returnResults(evt) {
         console.log(farmId + ", " + serverId + ", " + id + ", " + secret);
 
         
-        $("#flickr").append('<a href="https://www.flickr.com/photo.gne?id=' + id + '/" target="_blank"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg"/></a><input class="form-check-input" type="checkbox" name="selected" value="https://www.flickr.com/photo.gne?id=' + id + '/" target="_blank">');
+        $("#flickr").append('<a href="https://www.flickr.com/photo.gne?id=' + id + '/" target="_blank"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg"/></a><input class="form-check-input" type="checkbox" name="selected" value="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg">');
 
         });
         });

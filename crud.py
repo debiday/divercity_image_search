@@ -3,7 +3,9 @@
 from model import db, User, Collection, Picture, connect_to_db
 from datetime import datetime
 
-
+# <!--------------------------------------------------------------->
+# <-- Routes for user -->
+# <!--------------------------------------------------------------->
 def create_user(email, password):
     """Create and return a new user."""
 
@@ -13,9 +15,6 @@ def create_user(email, password):
     db.session.commit()
 
     return new_user
-
-# def create_collection():
-#     """Create and return a collection"""
 
 
 def get_user_by_id(user_id):
@@ -30,6 +29,9 @@ def get_user_by_email(email):
     return User.query.filter(User.email == email).first()
 
 
+# <!--------------------------------------------------------------->
+# <-- Routes for collections -->
+# <!--------------------------------------------------------------->
 def get_collections():
     """Return all collections."""
 
@@ -52,6 +54,29 @@ def create_collection(user_id, notes, date_saved=datetime.today()):
 
     return new_collection
 
+
+def get_collection_by_email(email):
+    """Return all collections belonging to a user"""
+    
+    user_collection = Collection.query.join(User)
+
+    return user_collection.filter(User.email == email).all()
+
+
+def delete_collection(collection_id):
+    """Delete a collection object from the database."""
+
+    collection_object = get_collection_by_id(collection_id)
+
+    db.session.delete(collection_object)
+    db.session.commit()
+
+    return collection_object
+
+
+# <!--------------------------------------------------------------->
+# <-- Routes for pictures -->
+# <!--------------------------------------------------------------->
 def create_picture(collection_id, url):
     """Create and return a new picture."""
 
@@ -63,21 +88,13 @@ def create_picture(collection_id, url):
     return new_picture
 
 
-def get_collection_by_email(email):
-    """Return all collections belonging to a user"""
-    
-    user_collection = Collection.query.join(User)
 
-    return user_collection.filter(User.email == email).all()
-
-# TODO: Fix this function
 def get_pictures_by_collection(collection_id):
     """Return all pictures in collection."""
 
     collection_pictures = Picture.query.join(Collection)
 
     return collection_pictures.filter(Collection.collection_id == collection_id).all()
-
 
 
 
