@@ -24,8 +24,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-![Front-page]()
-![Account-search]()
+![Front-page](https://github.com/Debiday/Divercity/blob/master/static/images/d1.gif)
+Users can search for images and save them to a collection.
+![Image-search](https://github.com/Debiday/Divercity/blob/master/static/images/d2.gif)
+Users can revisit their curated collections.
+![Image-save](https://github.com/Debiday/Divercity/blob/master/static/images/d3.gif)
 
 
 This project envisions a more diverse selection of images that more accurately represent people who live in a city. This API produces a notably better selection of photos compared to many stock photo providers. While there is copyright issues with Flickr's photos, users can opt to personally contact the photographers, or use this as a visual resource to understand the cultural diversity of places.
@@ -50,6 +53,9 @@ Front-end
 * AJAX
 * Bootstrap
 * HTML/ CSS
+
+DB Model
+<img src="static/images/db.png" alt="DB">
 
 
 <!-- ROADMAP -->
@@ -95,6 +101,9 @@ export API_SECRET="xxxxx"`
 1. `python3 test.py` to see individual tests
 2. `coverage run --source=. --omit="env/*" test.py` to not test test.py file
 2. `coverage report -m` to see a report
+
+<img src="static/images/test1.png" alt="test1">
+<img src="static/images/test2.png" alt="test1">
 
 <!-- CONTACT -->
 ## Contact
