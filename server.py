@@ -130,6 +130,7 @@ def save_collection():
   user_id = request.form.get('user_id')
   date_saved = request.form.get('date_saved')
   notes = request.form.get('notes')
+  urls = request.form.get('urls')
 
   new_collection = crud.create_collection(user_id=user_id, date_saved=date_saved, notes=notes)
 
@@ -141,9 +142,11 @@ def save_collection():
   print("******collection id*******")
   print(collection_id)
   print("******list of selected images*******")
-  urls = request.form.get("selected")
-  print(request.form) 
-  print(str(urls))
+
+  url_list = urls.split(", ")
+  for url in url_list:
+    crud.create_picture(collection_id=collection_id, url=url)
+
 
 
   if new_collection:
