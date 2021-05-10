@@ -59,7 +59,7 @@ class FlaskTests(TestCase):
         client = app.test_client()
         result = client.get('/')
         self.assertEqual(result.status_code, 200)
-        self.assertIn(b'<h1 style="text-align: center;">Welcome!</h1>', result.data)
+        self.assertIn(b'<p>Already have an account? <a href="/">Sign in</a>.</p>', result.data)
 
 
     def test_return_images(self):
@@ -116,18 +116,6 @@ class FlaskTestsLoggedIn(TestCase):
         self.assertEqual(result.status_code, 200)
         self.assertIn(b'<div id="image-results">', result.data)
 
-    # def test_account_page(self):
-    #     """Check account page loads."""
-
-    #     client = app.test_client()
-    #     self.client.post('/login',
-    #                         data={'email': 'user1@user.com',
-    #                         'password': 'test'},
-    #                         follow_redirects=True)
-    #     result = client.post('/account-page')
-    #     # self.assertEqual(result.status_code, 302)
-    #     # #302 - Redirecting to next page
-    #     self.assertIn(b'account-page.html', result.data)
 
     def test_query_collection(self):
         """Check collection query."""
