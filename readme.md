@@ -18,8 +18,6 @@
     <a href="https://github.com/debiday/Divercity/issues">Report Bug</a>
     ·
     <a href="https://github.com/debiday/Divercity/issues">Request Feature</a>
-    ·
-    <a href="https://debiday.wordpress.com">Process Blog</a>
   </p>
 </p>
 
@@ -27,15 +25,11 @@
 ## About The Project
 
 ![Front-page]()
+![Account-search]()
 
 
-This project visualizes the 
+This project envisions a more diverse selection of images that more accurately represent people who live in a city. This API produces a notably better selection of photos compared to many stock photo providers. While there is copyright issues with Flickr's photos, users can opt to personally contact the photographers, or use this as a visual resource to understand the cultural diversity of places.
 
-The data is  
-
-To sign up as
-
-![Tracking-page](page.gif)
 
 ### Built With
 
@@ -63,18 +57,18 @@ Front-end
 ### MVP
 Users are able to query for images of people based on city. 
 
-### 1.0 - Current
+### 1.0 
 * Create a search bar that allow user to search for people in a specific city
 * Allow users to log into their own account to save pictures
 
-### 2.0
+### 2.0 - Current
 * Allow users to save pictures to a specific collection
 * Create functionality to add/delete photos for a curated collection
 * Add google's autocomplete API for places
 
 ### 3.0 - The future
 * Create resources for user to reach out to photographers
-* Integrate API for stock photos (which aren't as diverse)
+* Integrate API for stock photo choices (less diverse)
 * Give users the choice to pay for licensed photos
 * Allow users to share their collections with other users
 * A zoomable world map that load related images on click
