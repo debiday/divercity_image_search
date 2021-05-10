@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ user.email }} - Details{% endblock %}
+
+{% block body %}
+<div id="image-results">
+<div id="tracking-buttons" class="nav">
+  <form action="/logout" method="get">
+    <button id="tracking-top-button" type="submit">Log Out</button></form>
+  <form action="/forum" method="get" >
+    <button id="tracking-top-button" type="submit">Forum</button></form>
+  </div>
+
+
+<p><h5>Here are your collections, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
+
+
+    {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %}
+    <p><h1>📸</h1></p>
+    <form name="image-form" name="image-form" action="/show-images" method="POST">
+      <input type="hidden" name="collection-id" value="{{ collection.collection_id }}">
+      <input type="submit" id="{{ collection.collection_id }}" class="collection-id" value="Collection No.:{{ collection.collection_id }}">
+    </form>
+
+      <h4><span>Pictures from {{ collection.notes }} saved on {{ collection.date_saved }}</span></h4>
+      <div id="images-from-collection"></div>
+
+    <form action="/delete_collection" method="POST">
+      <input type="hidden" name="collection_id" value="{{ collection.collection_id }}">
+      <input id="delete-tracking" type="submit" value="Delete">
+    </form>
+    <p>🤔</p>
+    <br>
+    <br>
+      {% endfor %}
+
+    </div>
+
+    {% endblock %}
