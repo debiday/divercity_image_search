@@ -25,19 +25,19 @@
 ## About The Project
 
 **Register**
-![Front-page](https://github.com/Debiday/Divercity/blob/master/static/images/d1.gif)
+![Front-page](https://github.com/Debiday/Divercity/blob/master/static/images/d11.gif)
 
 
 
 **Search**
 * Users can search for images and save them to a collection.
-![Image-search](https://github.com/Debiday/Divercity/blob/master/static/images/d2.gif)
+![Image-search](https://github.com/Debiday/Divercity/blob/master/static/images/d22.gif)
 
 
 
 **Save**
 * Users can revisit their curated collections.
-![Image-save](https://github.com/Debiday/Divercity/blob/master/static/images/d3.gif)
+![Image-save](https://github.com/Debiday/Divercity/blob/master/static/images/d33.gif)
 
 
 
