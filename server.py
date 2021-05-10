@@ -146,12 +146,22 @@ def collections_page():
   return redirect('/')
 
 
-# @app.route('/show-images')
-# def show_full_collection():
-#   """Returns images in collection."""
+@app.route('/show-images', methods=["POST"])
+def show_full_collection():
+  """Returns images in collection."""
 
-#     collection_pictures = crud.get_pictures_by_collection(collection_id)
+  collection_id = request.form.get('collection-id')
 
+  collection_pictures = crud.get_pictures_by_collection(collection_id)
+
+  return render_template('pictures.html', collection_pictures=collection_pictures)
+
+
+@app.route('/pictures')
+def pictures_from_collection():
+    """View pictures from collection."""
+
+    return render_template('pictures.html')
 
 # <___Previous Working Python Solutions_____>
 

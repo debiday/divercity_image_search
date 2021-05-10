@@ -15,35 +15,15 @@
 <p><h5>Here are your collections, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
 
 
-    {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %} 
+    {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %}
+    <form name="image-form" name="image-form" action="/show-images" method="POST">
+      <input type="hidden" name="collection-id" value="{{ collection.collection_id }}">
       <input type="submit" id="{{ collection.collection_id }}" class="collection-id" value="Collection No.:{{ collection.collection_id }}">
+    </form>
+
       <h4><span>Pictures from {{ collection.notes }} saved on {{ collection.date_saved }}</span></h4>
       <div id="images-from-collection"></div>
       {% endfor %}
-
-  <script>
-      console.log("hello images");
-      
-      function showImageResult(evt) {
-          console.log('hello images in collection');
-      
-          evt.preventDefault();
-      
-          let url = "/show_images";
-          let collectionData = {'collection_id': evt.target.id};
-          console.log(collectionData);
-      
-          $.post(url, collectionData, (response) => {
-      
-              console.log(response.collection_id);
-
-      
-              $('#images-from-collection').html(response);
-          });
-      } 
-
-    $(".collection_id").on("click", showImageResult);  
-    </script>
 
     </div>
 
