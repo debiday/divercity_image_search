@@ -24,9 +24,14 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+**Register**
 ![Front-page](https://github.com/Debiday/Divercity/blob/master/static/images/d1.gif)
+
+**Search**
 Users can search for images and save them to a collection.
 ![Image-search](https://github.com/Debiday/Divercity/blob/master/static/images/d2.gif)
+
+**Save**
 Users can revisit their curated collections.
 ![Image-save](https://github.com/Debiday/Divercity/blob/master/static/images/d3.gif)
 
@@ -54,7 +59,8 @@ Front-end
 * Bootstrap
 * HTML/ CSS
 
-DB Model
+
+**DB Model**
 <img src="static/images/db.png" alt="DB">
 
 
@@ -102,7 +108,10 @@ export API_SECRET="xxxxx"`
 2. `coverage run --source=. --omit="env/*" test.py` to not test test.py file
 2. `coverage report -m` to see a report
 
+**Screenshot**
 <img src="static/images/test1.png" alt="test1">
+
+**Screenshot**
 <img src="static/images/test2.png" alt="test1">
 
 <!-- CONTACT -->
