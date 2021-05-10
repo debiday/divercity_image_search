@@ -32,15 +32,17 @@
       
       <div id="image-results">
         <h2><div id="galleryTitle"></div></h2>
-        <div style="clear:both;"/>
+        <div style="clear:both;"></div>
 
-      <form name="image-form" id="image-form" action="/save_images" method="POST"> 
+      <script src="static/js/saveImages.js"></script> 
+      <form name="image-form" id="image-form" action="/save_images" method="POST">
+        <input type="submit" value="Save to account"> 
         <div id="flickr"/></div>
         <p>Logged in?</p>
         <input type="submit" value="Save to account">
-    </form> 
+       </form> 
     <!-- TODO: Make a large vertical button instead. -->
-    <script src="static/js/saveImages.js"></script>        
+    <!-- <script src="static/js/saveImages.js"></script>         -->
     <!-- <------------FLICKR API------------>
 
 

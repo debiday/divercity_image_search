@@ -17,7 +17,7 @@
       <div class="navbar-header">
         <a class="navbar-brand" href="#">Divercity</a></div>
         <div class="navbar-header">
-          <a class="nav navbar-nav navbar-left" href="#" style="padding-left: -500px;">How to use images</a></div>
+          <a class="nav navbar-nav navbar-left" href="#">How to use images</a></div>
       <div class="nav navbar-nav navbar-right">
         <form action="/login" class="navbar-form navbar-left" id="login-form" method="POST">
           <input type="email" placeholder="Email" id="email" class="form-control" name="email">
@@ -89,8 +89,17 @@
       
       <div id="image-results">
         <h2><div id="galleryTitle"></div></h2>
-        <div style="clear:both;"/>
-        <div id="flickr"/></div>
+        <div style="clear:both;"></div>
+
+      <form name="image-form" id="image-form" action="/save_images" method="POST"> 
+        <div id="flickr"></div>
+        <p>Logged in?</p>
+        <input type="submit" value="Save to account">
+    </form> 
+  </div>
+</div>
+    <!-- TODO: Make a large vertical button instead. -->
+    <script src="static/js/saveImages.js"></script>    
             
     <!-- <------------FLICKR API------------>
 

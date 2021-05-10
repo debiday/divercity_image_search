@@ -12,7 +12,16 @@ function saveImages(evt) {
 
     let user_id = $('#user-id').text();
 
+    let arr = [];
+
+    $('input.form-check-input:checkbox:checked').each(function () {
+        arr.push($(this).val());
+    });
+
+    let urls = arr.join(", ");
+
     let url = "/save-images";
+
 
     let savedData = {
                     //  'user_id': user_id,
@@ -20,10 +29,9 @@ function saveImages(evt) {
                      'user_id': user_id,
                      'date_saved': date_saved,
                      'notes': $('#user-city').val(),
+                     'urls': urls,
                     //  'email': email
                     };
-    console.log("*******");
-    console.log(savedData['user_id']);
 
     $.post(url, savedData, (response) => {
 

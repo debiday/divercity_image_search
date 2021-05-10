@@ -111,7 +111,6 @@ def save_tracking():
     return final_url
 
 
-
 @app.route('/account-page')
 def collections_page():
   """Show user's account-page."""
@@ -141,18 +140,25 @@ def save_collection():
   collection_id = int(collection_str[26:29])
   print("******collection id*******")
   print(collection_id)
+  print("******list of selected images*******")
+  urls = request.form.get("selected")
+  print(request.form) 
+  print(str(urls))
 
 
   if new_collection:
     flash("Your images have been saved in your saved searches.")
 
-  return 'done'
-  # return redirect
-  # return redirect('/tracking-page')
+  return "Your images have been saved in your saved searches."
+# <___Working_____>
+
   # if request.method == 'POST':
-  #   image_list = request.form.getlist('selected')
-  #   print(image_list)
-  # return 'done'
+  #     image_list = request.form.getlist('selected')
+  #     print(request.form.getlist('1'))
+
+  # # for url in image_list:
+  # #   save_picture = crud.create_picture(collection_id, url)
+  # return str(image_list)
 
   # new_pictures = crud.create_picture(collection_id=collection_id, url=url)
 
