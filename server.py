@@ -111,20 +111,6 @@ def save_tracking():
     return final_url
 
 
-@app.route('/account-page')
-def collections_page():
-  """Show user's account-page."""
-  # Removes ability to access this page if not logged in
-  if 'email' in session:
-    user = crud.get_user_by_email(session['email'])
-    # session["email"] = email
-
-    user_collection = crud.get_collection_by_email(session['email'])
-
-    return render_template('account-page.html', user=user, user_collection=user_collection)
-  return redirect('/')
-
-
 @app.route('/save-images', methods=["POST"])
 def save_collection():
   """Creates and returns a collection to database."""
@@ -144,6 +130,27 @@ def save_collection():
     flash("Your images have been saved in your saved searches.")
 
   return "Your images have been saved in your saved searches."
+
+
+@app.route('/account-page')
+def collections_page():
+  """Show user's account-page and collections."""
+  # Removes ability to access this page if not logged in
+  if 'email' in session:
+    user = crud.get_user_by_email(session['email'])
+    # session["email"] = email
+
+    user_collection = crud.get_collection_by_email(session['email'])
+
+    return render_template('account-page.html', user=user, user_collection=user_collection)
+  return redirect('/')
+
+
+# @app.route('/show-images')
+# def show_full_collection():
+#   """Returns images in collection."""
+
+#     collection_pictures = crud.get_pictures_by_collection(collection_id)
 
 
 # <___Previous Working Python Solutions_____>

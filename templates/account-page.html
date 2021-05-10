@@ -16,7 +16,7 @@
 
 
     {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %} 
-      <div id="{{ collection.collection_id }}" class="collection-id" width="200">Collection No.:{{ collection.collection_id }}</div>
+      <input type="submit" id="{{ collection.collection_id }}" class="collection-id" value="Collection No.:{{ collection.collection_id }}">
       <h4><span>Pictures from {{ collection.notes }} saved on {{ collection.date_saved }}</span></h4>
       <div id="images-from-collection"></div>
       {% endfor %}
@@ -36,20 +36,13 @@
           $.post(url, collectionData, (response) => {
       
               console.log(response.collection_id);
-              let child_info = {"fname": response.fname,
-                                "lname": response.lname,
-                              }
+
       
-              let all_info = `Name: ${child_info.fname} ${child_info.lname}\n`+ 
-                              `State: ${child_info.state}\n`+
-                              `Notes: `
-      
-              // let all_info = response.state
-      
-              $('#notes').data(childData);
-              $('#notes').html(all_info);
+              $('#images-from-collection').html(response);
           });
       } 
+
+    $(".collection_id").on("click", showImageResult);  
     </script>
 
     </div>
