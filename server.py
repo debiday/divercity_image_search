@@ -124,7 +124,7 @@ def collections_page():
     return render_template('account-page.html', user=user, user_collection=user_collection)
   return redirect('/')
 
-# TODO: Fix these two crucial routes
+
 @app.route('/save-images', methods=["POST"])
 def save_collection():
   """Creates and returns a collection to database."""
@@ -136,20 +136,9 @@ def save_collection():
 
   new_collection = crud.create_collection(user_id=user_id, date_saved=date_saved, notes=notes)
 
-  # collection_id = new_collection[collection_id]
-  # print("****finding collection id****")
-  # print(collection_id)
-  collection_str = str(new_collection)
-  collection_id = int(collection_str[26:29])
-  print("******collection id*******")
-  print(collection_id)
-  print("******list of selected images*******")
-
   url_list = urls.split(", ")
   for url in url_list:
     crud.create_picture(collection_id=collection_id, url=url)
-
-
 
   if new_collection:
     flash("Your images have been saved in your saved searches.")

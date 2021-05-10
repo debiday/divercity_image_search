@@ -18,8 +18,39 @@
     {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %} 
       <div id="{{ collection.collection_id }}" class="collection-id" width="200">Collection No.:{{ collection.collection_id }}</div>
       <h4><span>Pictures from {{ collection.notes }} saved on {{ collection.date_saved }}</span></h4>
+      <div id="images-from-collection"></div>
       {% endfor %}
 
+  <script>
+      console.log("hello images");
+      
+      function showImageResult(evt) {
+          console.log('hello images in collection');
+      
+          evt.preventDefault();
+      
+          let url = "/show_images";
+          let collectionData = {'collection_id': evt.target.id};
+          console.log(collectionData);
+      
+          $.post(url, collectionData, (response) => {
+      
+              console.log(response.collection_id);
+              let child_info = {"fname": response.fname,
+                                "lname": response.lname,
+                              }
+      
+              let all_info = `Name: ${child_info.fname} ${child_info.lname}\n`+ 
+                              `State: ${child_info.state}\n`+
+                              `Notes: `
+      
+              // let all_info = response.state
+      
+              $('#notes').data(childData);
+              $('#notes').html(all_info);
+          });
+      } 
+    </script>
 
     </div>
 
