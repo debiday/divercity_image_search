@@ -3,6 +3,7 @@
 {% block title %}{{ user.email }} - Details{% endblock %}
 
 {% block body %}
+<div id="image-results">
 <div id="tracking-buttons" class="nav">
   <form action="/logout" method="get">
     <button id="tracking-top-button" type="submit">Log Out</button></form>
@@ -10,13 +11,16 @@
     <button id="tracking-top-button" type="submit">Forum</button></form>
   </div>
 
+
 <p><h5>Here are your collections, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
 
 
     {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %} 
-      <td id="{{ collection.collection_id }}" class="collection-id" width="200">{{ collection.collection_id }}</td>
-      <td width="200">{{ collection.date_saved }}</td>
-      <td width="200">{{ collection.notes }}</td>
+      <div id="{{ collection.collection_id }}" class="collection-id" width="200">Collection No.:{{ collection.collection_id }}</div>
+      <h4><span>Pictures from {{ collection.notes }} saved on {{ collection.date_saved }}</span></h4>
       {% endfor %}
+
+
+    </div>
 
     {% endblock %}
