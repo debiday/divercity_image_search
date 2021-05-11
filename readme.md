@@ -25,7 +25,7 @@
 ## About The Project
 
 **Register**
-![Front-page](https://github.com/Debiday/Divercity/blob/master/static/images/d11.gif)
+![Front-page](https://github.com/Debiday/Divercity/blob/master/static/images/d111.gif)
 
 
 
