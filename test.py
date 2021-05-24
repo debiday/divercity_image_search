@@ -1,4 +1,3 @@
-import model 
 import crud
 import os
 from unittest import TestCase

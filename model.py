@@ -55,9 +55,9 @@ class Picture(db.Model):
         return f'<Picture picture_id={self.picture_id} URL={self.url}>'
 
 
-def connect_to_db(flask_app, db_uri='postgresql:///images', echo=True):
+def connect_to_db(flask_app, db_uri='postgresql:///images', echo=False):
     flask_app.config['SQLALCHEMY_DATABASE_URI'] = db_uri
-    flask_app.config['SQLALCHEMY_ECHO'] = echo
+    flask_app.config['SQLALCHEMY_ECHO'] = False
     flask_app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
     db.app = flask_app

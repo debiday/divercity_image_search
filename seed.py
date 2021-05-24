@@ -9,14 +9,12 @@ from random import choice, randint
 from datetime import datetime
 
 import crud
-# import model
-# import server
 
 os.system('dropdb images')
 os.system('createdb images')
 
-model.connect_to_db(server.app)
-model.db.create_all()
+connect_to_db(app)
+db.create_all()
 
 if __name__ == '__main__':
     connect_to_db(app)

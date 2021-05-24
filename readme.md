@@ -9,7 +9,7 @@
   <h3 align="center">Divercity</h3>
 
   <p align="center">
-    This project allows you to curate photos of people that can be found in each city. 
+    This project allows you to curate photos of people that can be found in cities all over the world. 
     <br />
     <br />
     <br />
