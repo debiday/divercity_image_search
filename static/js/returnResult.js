@@ -33,7 +33,7 @@ function returnResults(evt) {
 
 
         document.getElementById('flickr').replaceChildren();
- 
+        $("#youhave").html("<h3>You have searched for people in</h3>")
         $("#galleryTitle").append(savedData["city"]+" ");
         $.each( data.photos.photo, function( i, gp ) {
 

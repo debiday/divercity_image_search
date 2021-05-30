@@ -5,11 +5,8 @@
 <head>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
 </head>
-  
-  
-  <style>
-  img {max-height:200px; margin:3px; border:1px solid #dedede;}
-  </style>
+
+<div class="header-image"></div>
 
 
   <nav class="navbar navbar-inverse">
@@ -26,7 +23,7 @@
           </form>
           <!-- MODAL REGISTRATION -->
           <div id="registration-modal" class="nav navbar-nav navbar-right">
-            <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Register</button>
+            <button onclick="document.getElementById('id01').style.display='block'">Register</button>
          
             <div id="id01" class="modal">
                 <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">×</span>
@@ -43,6 +40,9 @@
                         <div class="clearfix">
                             <button type="submit" class="signupbtn">Register</button>
                         <div class="container signin">
+                          <br>
+                          <br>
+                          <br>
                           <p>Already have an account? <a href="/">Sign in</a>.</p>
                         </div>
                         </div>
@@ -88,6 +88,7 @@
       <script src="static/js/returnResult.js"></script>
       
       <div id="image-results">
+        <div id="youhave"></div>
         <h2><div id="galleryTitle"></div></h2>
         <div style="clear:both;"></div>
         <div id="flickr"></div>

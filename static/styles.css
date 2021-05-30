@@ -1,3 +1,20 @@
+/* <!--------------------------------------------------------------->
+<--Top Header -->
+<!---------------------------------------------------------------> */
+.header-image {
+    display: grid;
+    background-image: url("/static/images/background.png");
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100vh;
+
+}
+
+/* <!--------------------------------------------------------------->
+<--Image Search -->
+<!---------------------------------------------------------------> */
 .form-group {
     display: inline-flex;
 }
@@ -12,16 +29,19 @@
 #image-results {
     margin: auto;
     width: 80%;
-    border: 3px white;
-    padding: 18px;
     display: block;
 }
 
 /* TODO: Images not centred yet */
 #flickr {
     display: inline-block;
-} 
 
+} 
+#flickr img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
 
 input[type=checkbox] {
     width:30px; 
@@ -30,9 +50,13 @@ input[type=checkbox] {
 
 .imgresult {
     padding: 20px;
+    width: 100px;
+    height: 100px;
 }
 
-/* <-----Modal Registration-----> */
+/* <!--------------------------------------------------------------->
+<--Modal Registration -->
+<!---------------------------------------------------------------> */
 /*add full-width input fields*/
 input[type=text],
 input[type=password] {
@@ -47,10 +71,11 @@ input[type=password] {
 button {
     background-color: green;
     color: white;
-    padding: 14px 20px;
+    padding: 6px 12px;
     margin: 8px 0;
     cursor: pointer;
     width: 100%;
+    border-radius: .25rem;
 }
 /*set styles for the cancel button*/
 .cancelbtn {
