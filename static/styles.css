@@ -1,16 +1,60 @@
 /* <!--------------------------------------------------------------->
 <--Top Header -->
 <!---------------------------------------------------------------> */
-.header-image {
-    display: grid;
-    background-image: url("/static/images/background.png");
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-    height: 100vh;
-
+.header-stuff {
+    position: relative;
+    text-align: center;
+    color: white;
 }
+/* 
+.header-stuff {
+    display:inline-block;
+    position:relative;
+} */
+
+.header-stuff button {
+    position: absolute;
+    bottom:4em;
+    right:12em;
+    background-color:#4CAF50;
+    border-radius:1.5em;
+    color:white;
+    padding:1em 1.5em;
+}
+
+.header-stuff #register {
+    position: absolute;
+    bottom:4em;
+    right:4em;
+    background-color:#4CAF50;
+    border-radius:1.5em;
+    color:white;
+    padding:1em 1.5em;
+}
+
+/* #header-button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+} */
+
+.header-img {
+    height: auto;
+    width: 100%;
+}
+
+
 
 /* <!--------------------------------------------------------------->
 <--Image Search -->
@@ -68,7 +112,7 @@ input[type=password] {
     box-sizing: border-box;
 }
 /* set a style for all buttons*/
-button {
+button:not(#register):not(#test) {
     background-color: green;
     color: white;
     padding: 6px 12px;
