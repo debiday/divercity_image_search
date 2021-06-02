@@ -9,9 +9,17 @@
 <div class="header-stuff">
   <img class="header-img" src="/static/images/background.png" alt="Shoes and camera travelling image">
   <button id="test">Test</button>
-  <button id="register">Register</button>
+  <button id="register" onclick="document.getElementById('id01').style.display='block'">Register</button>
 </div>
 
+
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <p>{{ message }}</p>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
 
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -73,6 +81,8 @@
       </div>
     </div>
   </nav>
+
+</section>
 
 
     <h1 style="text-align: center;">Try out the Divercity app!</h1>

@@ -16,7 +16,7 @@
     position: absolute;
     bottom:4em;
     right:12em;
-    background-color:#4CAF50;
+    background-color:#e71d36;
     border-radius:1.5em;
     color:white;
     padding:1em 1.5em;
@@ -26,28 +26,12 @@
     position: absolute;
     bottom:4em;
     right:4em;
-    background-color:#4CAF50;
+    background-color:#e71d36;
     border-radius:1.5em;
     color:white;
     padding:1em 1.5em;
 }
 
-/* #header-button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-} */
 
 .header-img {
     height: auto;
