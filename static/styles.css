@@ -1,3 +1,10 @@
+button:focus {
+    outline: 0;
+}
+
+.navbar .dropdown-menu .form-control {
+    width: 200px;
+}
 /* <!--------------------------------------------------------------->
 <--Top Header -->
 <!---------------------------------------------------------------> */
@@ -20,6 +27,7 @@
     border-radius:1.5em;
     color:white;
     padding:1em 1.5em;
+
 }
 
 .header-stuff #register {
