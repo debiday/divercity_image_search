@@ -1,10 +1,18 @@
+
 button:focus {
     outline: 0;
 }
 
 .navbar .dropdown-menu .form-control {
     width: 200px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
 }
+
+.navbar-inner {
+    background:transparent;
+}
+
 /* <!--------------------------------------------------------------->
 <--Top Header -->
 <!---------------------------------------------------------------> */
@@ -42,6 +50,7 @@ button:focus {
 
 
 .header-img {
+    padding-top: 60px;
     height: auto;
     width: 100%;
 }
@@ -104,7 +113,7 @@ input[type=password] {
     box-sizing: border-box;
 }
 /* set a style for all buttons*/
-button:not(#register):not(#test) {
+button:not(#register):not(#test):not(#navbar-toggler):not(#hamburger) {
     background-color: green;
     color: white;
     padding: 6px 12px;
