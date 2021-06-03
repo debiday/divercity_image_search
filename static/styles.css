@@ -33,7 +33,7 @@ button:focus {
     position: absolute;
     bottom:16em;
     right:18em;
-    background-color:#8F0005;
+    background-color: #301934;
     border-radius:0.5em;
     color:white;
     width: 250px;
@@ -43,7 +43,7 @@ button:focus {
     position: absolute;
     bottom:16em;
     right:35em;
-    background-color:#8F0005;
+    background-color:#301934;
     border-radius:0.5em;
     color:white;
     width: 250px;
@@ -64,7 +64,7 @@ button:focus {
 #user-city:focus {
     outline: none !important;
     border:1px solid red;
-    box-shadow: 0 0 10px purple;
+    box-shadow: 0 0 10px orangered;
 }
 
 .form-group {
@@ -74,7 +74,7 @@ button:focus {
 #city-search {
     margin: auto;
     width: 50%;
-    border: 3px #8F0005;
+    border: 3px #301934;
     padding: 10px;
 }
 
@@ -121,7 +121,7 @@ input[type=password] {
 }
 /* set a style for all buttons*/
 button:not(#register):not(#test):not(#navbar-toggler):not(#hamburger) {
-    background-color: #8F0005;
+    background-color: #301934;
     color: white;
     padding: 6px 12px;
     margin: 8px 0;
