@@ -1,4 +1,6 @@
-
+/* <!--------------------------------------------------------------->
+<--Navbar -->
+<!---------------------------------------------------------------> */
 button:focus {
     outline: 0;
 }
@@ -29,23 +31,22 @@ button:focus {
 
 .header-stuff button {
     position: absolute;
-    bottom:4em;
-    right:12em;
+    bottom:16em;
+    right:18em;
     background-color:#8F0005;
-    border-radius:1.5em;
+    border-radius:0.5em;
     color:white;
-    padding:1em 1.5em;
-
+    width: 250px;
 }
 
 .header-stuff #register {
     position: absolute;
-    bottom:4em;
-    right:4em;
+    bottom:16em;
+    right:35em;
     background-color:#8F0005;
-    border-radius:1.5em;
+    border-radius:0.5em;
     color:white;
-    padding:1em 1.5em;
+    width: 250px;
 }
 
 

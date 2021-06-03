@@ -60,17 +60,22 @@
 
 <!-------------------- End-Navbar-------------------------->
 
+
 <div class="header-stuff">
   <img class="header-img" src="/static/images/background.png" alt="Shoes and camera travelling image">
-  <button id="test">Test</button>
-  <button id="register" onclick="document.getElementById('id01').style.display='block'">Register</button>
+  <button id="test" class="btn btn-default">Trial</button>
+  <button id="register" class="btn btn-default" onclick="document.getElementById('id01').style.display='block'">Register</button>
 </div>
 
 
-{% with messages = get_flashed_messages() %}
+{% with messages = get_flashed_messages(with_categories=true) %}
+  <!-- Categories: success (green), info (blue), warning (yellow), danger (red) -->
   {% if messages %}
-    {% for message in messages %}
-      <p>{{ message }}</p>
+    {% for category, message in messages %}
+      <div class="alert alert-{{ category }} alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <!-- <strong>Title</strong> --> {{ message }}
+      </div>
     {% endfor %}
   {% endif %}
 {% endwith %}
