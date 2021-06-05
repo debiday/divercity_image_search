@@ -55,6 +55,7 @@ This project creates diverse selection of images that more accurately represent 
 
 APIs
 * [Flickr](https://docs.mapbox.com/api/overview/)
+* Google Places
 
 
 Front-end
