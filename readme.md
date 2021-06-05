@@ -9,7 +9,7 @@
   <h3 align="center">Divercity</h3>
 
   <p align="center">
-    This project allows you to curate photos of people that can be found in cities all over the world 
+    This application allows you to create a visual resource for ethnicities in different places around the world. The project uses the Flickr api to generate the 100 most recent photographs from each query.  
     <br />
     <br />
     <br />
