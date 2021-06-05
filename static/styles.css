@@ -133,7 +133,7 @@ input[type="checkbox"] {
   
   input[type="checkbox"]:after {
     content:'🌼';
-    font-size: 40px;
+    font-size: 42px;
     position: relative;
     left: 40%;
     top: 20%;
@@ -141,7 +141,7 @@ input[type="checkbox"] {
     height: 40%;
     /* border: solid #fff;
     border-width: 0 2px 2px 0; */
-    transform: translate(-19px, -18px);
+    transform: translate(-18px, -22px);
     display: none;
   }
   
