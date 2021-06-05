@@ -36,7 +36,7 @@
 
 
 **Save**
-* Users can revisit their curated collections.
+* Users can revisit their curated collections from each city.
 ![Image-save](https://github.com/Debiday/Divercity/blob/master/static/images/d33.gif)
 
 
