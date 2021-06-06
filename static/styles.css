@@ -82,6 +82,7 @@ button:focus {
     margin: auto;
     width: 80%;
     display: block;
+    text-align: center;
 }
 
 /* TODO: Images not centred yet */
