@@ -33,8 +33,11 @@ function returnResults(evt) {
 
 
         document.getElementById('flickr').replaceChildren();
-        $("#youhave").html("<h3>You have searched for people in</h3>")
-        $("#galleryTitle").html(savedData["city"]+".");
+        $("#galleryTitle").html("<span>You have searched for people in </span>" + savedData["city"]+".");
+        $("#instructions").html("<p class='notbold'>Click the top right hand corner to select pictures.</p>");
+        // window.scrollBy(-10000, -10000);
+        document.getElementById("flickr").scrollIntoView({ block: 'start',  behavior: 'smooth' });
+
         $.each( data.photos.photo, function( i, gp ) {
 
                 let farmId = gp.farm;
