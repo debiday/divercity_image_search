@@ -20,8 +20,10 @@ button:focus {
 <!---------------------------------------------------------------> */
   /* Default height for small devices */
   #intro {
-    width: 100vw;
-    background-repeat: repeat;
+    width: 100%;
+    background-size: cover;
+    height: 90vh;
+    background-repeat: no-repeat;
   }
 
   /* Height for devices larger than 992px
