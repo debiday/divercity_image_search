@@ -85,20 +85,27 @@ button:focus {
     text-align: center;
 }
 
+
+
 /* TODO: Images not centred yet */
 #flickr {
     display: inline-block;
 
 } 
 #flickr img {
-    width: 200px;
-    height: 200px;
+    width: 230px;
+    height: 230px;
     object-fit: cover;
+    border: solid white 5px;
+
 }
 
 input[type=checkbox] {
     width:30px; 
-    height:30px;
+    height: 30px;
+    float: left;
+    margin: 0px -30px;
+    clear: both;
 }
 
 .imgresult {
