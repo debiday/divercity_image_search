@@ -35,7 +35,7 @@ function returnResults(evt) {
         document.getElementById('flickr').replaceChildren();
         $("#galleryTitle").html("<span>You have searched for people in </span>" + savedData["city"]+".");
         $("#instructions").html("<p class='notbold'>Click the top right hand corner to select pictures.</p>");
-        $("#ending").html("<p>Log in to save these images to your account 😀  </p>");
+        $("#ending").html("<br><p>Log in to save these images to your account 😀  </p>");
         // window.scrollBy(-10000, -10000);
         document.getElementById("flickr").scrollIntoView({ block: 'start',  behavior: 'smooth' });
 
