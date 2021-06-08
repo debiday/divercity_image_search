@@ -8,7 +8,7 @@
 
 
 <!-------------------- Navbar-------------------------->
-<nav class="navbar navbar-expand-lg navbar-light bg-light no-gutter bg-transparent" role="navigation" style="width:100%; z-index: 10; ">
+<nav class="navbar navbar-expand-lg navbar-light bg-light no-gutter" role="navigation" style="width:100%; z-index: 10; font-size: 2em !important; ">
   <div class="container">
       <a class="navbar-brand py-0" href="#">Divercity</a>
       <button class="navbar-toggler border-0" id="hamburger" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
@@ -65,20 +65,22 @@
 <div
   id="intro"
   class="p-5 text-center bg-image"
-  style="background-image: url('/static/images/background.png');   transform: translate(0px, -100px);"
+  style="background-image: url('/static/images/background.jpeg');   transform: translate(0px, -100px);"
 >
-  <div class="mask" style="background-color: rgba(255, 255, 255, 0.534);">
+  <!-- <div class="mask" style="background-color: rgba(255, 255, 255, 0.534);"> -->
     <div class="d-flex justify-content-center align-items-center h-100">
-      <div class="col-4">col-7</div>
+      <div class="col-4"></div>
       <div class="col-8 text-black">
+        <h4 class="mb-4">Images of real people in cities.</h4>
         <h1 class="mb-1">Divercity</h1>
-        <h5 class="mb-4">A visual resource by photographers on Flickr</h5>
-        <button id="test" class="btn btn-default">Trial</button>
-        <button id="register" class="btn btn-default" onclick="document.getElementById('id01').style.display='block'">Register</button>
+        <button id="test" class="btn btn-dark" onclick="window.location.href='#flickr';">Trial</button>
+        <button id="register" class="btn btn-dark" onclick="document.getElementById('id01').style.display='block'">Register</button>
       </div></div>
+      <h4 class="mb-4 text-white" style="text-shadow: 2px 2px #2e2e2ea8;">A visual resource by photographers on Flickr</h4>
     </div>
-  </div>
+  <!-- </div> -->
 </div>
+
 <!-- Background image -->
 
 
