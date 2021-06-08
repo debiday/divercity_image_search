@@ -8,7 +8,7 @@
 
 
 <!-------------------- Navbar-------------------------->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark no-gutter" role="navigation" style="width:100%">
+<nav class="navbar navbar-expand-lg navbar-light bg-light no-gutter bg-transparent" role="navigation" style="width:100%; z-index: 10; ">
   <div class="container">
       <a class="navbar-brand py-0" href="#">Divercity</a>
       <button class="navbar-toggler border-0" id="hamburger" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
@@ -28,7 +28,7 @@
                           <form action="/login" class="navbar-form navbar-left" id="login-form" method="POST">
                             <input type="email" placeholder="Email" id="email" class="form-control" name="email">
                             <input type="password" placeholder="Password" class="form-control" id="password" name="password">
-                            <button type="submit" id="login-button" class="btn btn-default" value="Login">Login</button>
+                            <button type="submit" id="login-button" class="btn btn-default white-background" value="Login">Login</button>
                             </form>
                              <!-- <---->
                       </li>
@@ -61,25 +61,25 @@
 
 <!-------------------- End-Navbar-------------------------->
 
-  <!-- Background image -->
-  <div
-    id="intro"
-    class="p-5 text-center bg-image"
-    style="background-image: url('/static/images/background.png');"
-  >
-    <div class="mask" style="background-color: rgba(0, 0, 0, 0.7);">
-      <div class="d-flex justify-content-center align-items-center h-100">
-        <div class="col-4">col-7</div>
-        <div class="col-8 text-white">
-          <h1 class="mb-3">Learn Bootstrap 5 with MDB</h1>
-          <h5 class="mb-4">Best & free guide of responsive web design</h5>
-          <button id="test" class="btn btn-default">Trial</button>
-          <button id="register" class="btn btn-default" onclick="document.getElementById('id01').style.display='block'">Register</button>
-        </div></div>
-      </div>
+<!-- Background image -->
+<div
+  id="intro"
+  class="p-5 text-center bg-image"
+  style="background-image: url('/static/images/background.png');   transform: translate(0px, -100px);"
+>
+  <div class="mask" style="background-color: rgba(255, 255, 255, 0.534);">
+    <div class="d-flex justify-content-center align-items-center h-100">
+      <div class="col-4">col-7</div>
+      <div class="col-8 text-black">
+        <h1 class="mb-1">Divercity</h1>
+        <h5 class="mb-4">A visual resource by photographers on Flickr</h5>
+        <button id="test" class="btn btn-default">Trial</button>
+        <button id="register" class="btn btn-default" onclick="document.getElementById('id01').style.display='block'">Register</button>
+      </div></div>
     </div>
   </div>
-  <!-- Background image -->
+</div>
+<!-- Background image -->
 
 
 
