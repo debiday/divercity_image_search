@@ -1,13 +1,17 @@
 /* <!--------------------------------------------------------------->
+<--Alerts -->
+<!---------------------------------------------------------------> */
+
+/* <!--------------------------------------------------------------->
 <--Navbar -->
 <!---------------------------------------------------------------> */
+nav a{
+    font-size: 1.8rem !important;
+    }
+
+
 button:focus {
     outline: 0;
-}
-
-.container a {
-    font-size: 18pt;
-    padding-right: 50px;
 }
 
 .container button {
@@ -245,10 +249,9 @@ input[type="checkbox"] {
 /*add full-width input fields*/
 input[type=text],
 input[type=password] {
-    font-size: 18pt;
     width: 100%;
     padding: 12px 20px;
-    margin: 8px 0;
+    margin: 8px 0px;
     display: inline-block;
     border: 2px solid #ccc;
     box-sizing: border-box;
@@ -292,6 +295,7 @@ button:not(#register):not(#test):not(#navbar-toggler):not(#hamburger) {
     background-color: rgb(0, 0, 0);
     background-color: rgba(0, 0, 0, 0.4);
     padding-top: 60px;
+    font-size: 1.3rem;
 }
 /*define the modal-content background*/
  

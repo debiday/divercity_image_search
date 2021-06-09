@@ -71,18 +71,18 @@ def submit_login_form():
   password = request.form['password']
 
   if user == None:
-    flash('''An account for this email doesn't exist yet.
-              Please create a new account.''')
-    return redirect('/')
+    # flash('''An account for this email doesn't exist yet.
+    #           Please create a new account.''')
+    return ("Not found")
   elif password != user.password:
-    flash('Wrong password. Please try again.')
-    return redirect('/')
+    # flash('Wrong password. Please try again.')
+    return ("Wrong password")
 
   else: 
-    flash('Logged in!')
+    # flash('Logged in!')
     session['email'] = user.email
 
-    return redirect('/user-page')
+    return ("Logged in")
 
 
 @app.route('/logout')
