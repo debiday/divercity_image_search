@@ -1,6 +1,82 @@
 /* <!--------------------------------------------------------------->
-<--Homepage/ Landing Page -->
+<--Homepage/ Landing Page Animation -->
 <!---------------------------------------------------------------> */
+.cd-intro-content h1,
+.cd-intro-content p,
+.cd-intro-content .cd-btn {
+opacity: 0;
+animation-delay: 0.3s;
+animation-fill-mode: forwards;
+}
+
+.bouncy.cd-intro-content h1 {
+animation-name: cd-bounce-right;
+}
+
+.bouncy.cd-intro-content h2 {
+animation-name: cd-bounce-left;
+}
+
+.bouncy.cd-intro-content h1,
+.bouncy.cd-intro-content h2 {
+animation-duration: 0.6s;
+}
+
+.bouncy.cd-intro-content .cd-btn {
+animation-name: cd-bounce-rotate;
+animation-duration: 0.5s;
+}
+
+.bouncy.cd-intro-content .cd-btn.main-action {
+animation-delay: 0.4s;
+}
+
+@keyframes cd-bounce-right {
+0% {
+opacity: .2;
+transform: translateX(-200px);
+}
+60% {
+opacity: .7;
+transform: translateX(15px);
+}
+100% {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+@keyframes cd-bounce-left {
+0% {
+opacity: .2;
+transform: translateX(200px);
+}
+60% {
+opacity: .7;
+transform: translateX(-15px);
+}
+100% {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+@keyframes cd-bounce-rotate {
+0% {
+opacity: .2;
+transform: perspective(800px) rotateX(-80deg);
+}
+20% {
+opacity: 1;
+}
+60% {
+transform: perspective(800px) rotateX(20deg);
+}
+100% {
+opacity: 1;
+transform: perspective(800px) rotateX(0);
+}
+}
 /* <!--------------------------------------------------------------->
 <--Navbar -->
 <!---------------------------------------------------------------> */
