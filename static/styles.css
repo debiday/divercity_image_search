@@ -1,7 +1,6 @@
 /* <!--------------------------------------------------------------->
-<--Alerts -->
+<--Homepage/ Landing Page -->
 <!---------------------------------------------------------------> */
-
 /* <!--------------------------------------------------------------->
 <--Navbar -->
 <!---------------------------------------------------------------> */
@@ -179,7 +178,7 @@ header {
     width: 230px;
     height: 230px;
     object-fit: cover;
-    border: solid white 5px;
+    border: 5px solid rgba(255,255,255,.5);
 
 }
 
@@ -336,3 +335,25 @@ button:not(#register):not(#test):not(#navbar-toggler):not(#hamburger) {
         width: 100%;
     }
 }
+
+/* <!--------------------------------------------------------------->
+<--User Page -->
+<!---------------------------------------------------------------> */
+body, html {
+    height: 100%;
+    margin: 0;
+  }
+  
+.user-background {
+    /* The image used */
+    background-image: url('/static/images/user.png');
+  
+    /* Full height */
+    height: 100%; 
+    background-repeat: repeat-y;
+  
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

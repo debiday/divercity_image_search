@@ -6,16 +6,29 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>  
 </head>
 
-    <h1 style="text-align: center;">Welcome!</h1>
-    <div style="text-align:center;">
-        <h8><p id="user-id"style="color:white;">{{ user.user_id }}</p></h8>
-        <p><h5>Good to see you, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
-    </div>
+<style>
 
-    <div id="city-search">
-    <form action="/collections" method="get" >
-        <button id="tracking-top-button" type="submit">My Saved Collections</button></form>
-    </div>
+.header {
+  height: 10vh;
+}
+</style>
+
+
+<div class="header">
+  <img id="header-img-base" src="static/images/user.jpg" alt="header-image">
+  </div>
+  
+
+  <h1 style="text-align: center;">Welcome!</h1>
+      <div style="text-align:center;">
+          <h8><p id="user-id"style="color:white;">{{ user.user_id }}</p></h8>
+          <p><h5>Good to see you, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
+      </div>
+
+      <div id="city-search">
+      <form action="/collections" method="get" >
+          <button id="tracking-top-button" type="submit">My Saved Collections</button></form>
+      </div>
 
   <!-- <------------FLICKR API------------>   
   <div id="city-search">
@@ -44,7 +57,7 @@
     <!-- TODO: Make a large vertical button instead. -->
     <!-- <script src="static/js/saveImages.js"></script>         -->
     <!-- <------------FLICKR API------------>
-
+</div>
 
 {% endblock %}
 
