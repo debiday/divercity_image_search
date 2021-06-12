@@ -31,7 +31,7 @@
 
 **Search**
 * Users can search for images and save them to a collection.
-![Image-search](https://github.com/Debiday/Divercity/blob/master/static/images/d22.gif)
+![Image-search](https://github.com/Debiday/Divercity/blob/master/static/images/search.gif)
 
 
 
