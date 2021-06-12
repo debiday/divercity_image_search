@@ -3,13 +3,15 @@
 
 {% block body %}
 
+<div class="header">
+  <img id="header-img-base" src="static/images/user-header.jpg" alt="header-image">
+  </div>
+
 <div class="user-header">
   <img id="header-img-base" src="static/images/user.jpg" alt="header-image">
   </div>
 <!-- Image credits: Isabella Mendes, Pexels -->
 
-
-<h1 style="text-align: center;">Welcome!</h1>
     <div style="text-align:center;">
         <h8><p id="user-id"style="color:white;">{{ user.user_id }}</p></h8>
         <p><h5>Good to see you, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
