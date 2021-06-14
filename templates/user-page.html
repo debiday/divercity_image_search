@@ -3,8 +3,8 @@
 
 {% block body %}
 
-<div class="header">
-  <img id="header-img-base" src="static/images/user-header.jpg" alt="header-image">
+<div class="user-header-1">
+  <img id="header-img-base" style="width:100vw; height:30vh;" src="static/images/user-header.jpg" alt="header-image">
   </div>
 
 <div class="user-header">
@@ -36,7 +36,7 @@
   <script src="static/js/returnResult.js"></script>
       
   <div id="image-results">
-    <h2><div id="galleryTitle"></div></h2>
+    <h3><div id="galleryTitle"></div></h3>
     <div style="clear:both;"></div>
 
       <script src="static/js/saveImages.js"></script> 
@@ -48,6 +48,9 @@
        </form> 
 <!-- <------------END-FLICKR API------------>
 </div>
+
+
+<div style="height: 20vh;"></div>
 
 {% endblock %}
 

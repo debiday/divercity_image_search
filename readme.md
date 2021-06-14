@@ -86,7 +86,7 @@ Users are able to query for images of people based on city.
 
 ### 3.0 - The future
 * Create resources for user to reach out to photographers
-* Integrate API for stock photo choices (less diverse)
+* Integrate API for stock photo choices
 * Give users the choice to pay for licensed photos
 * Allow users to share their collections with other users
 * A zoomable world map that load related images on click
