@@ -13,7 +13,7 @@ document.querySelector('#login-button').addEventListener('click', (evt) => {
         if (res === "Not found") {
             Toastify({
                 text: "An account for this email doesn't exist yet.",
-                duration: 2000,
+                duration: 700,
                 backgroundColor: "linear-gradient(to right, #874006, #330C04)",
                 className: "info",
                 }).showToast();

@@ -3,37 +3,47 @@
 
 {% block body %}
 
-<div class="user-header-1">
-  <img id="header-img-base" style="width:100vw; height:30vh;" src="static/images/user-header.jpg" alt="header-image">
-  </div>
-
 <div class="user-header">
   <img id="header-img-base" src="static/images/user.jpg" alt="header-image">
   </div>
 <!-- Image credits: Isabella Mendes, Pexels -->
 
-    <div style="text-align:center;">
-        <h8><p id="user-id"style="color:white;">{{ user.user_id }}</p></h8>
-        <p><h5>Good to see you, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
-    </div>
+<!------------------------User-Nav------------------------------->  
+<div class="user-header-1">
+  <img id="header-img-base" style="width:100vw; height:30vh;" src="static/images/user-header.jpg" alt="header-image">
+  </div> 
 
-    <div id="city-search">
-    <form action="/collections" method="get" >
-        <button id="tracking-top-button" type="submit">My Saved Collections</button></form>
-    </div>
+<!------------------------End-User-Nav------------------------------->  
+<div style="text-align:center;">
+    <h8><p id="user-id"style="color:white;">{{ user.user_id }}</p></h8>
+    <p><h5>Good to see you, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
+</div>
+
+<div id="city-search">
+<form action="/collections" method="get" >
+    <button id="tracking-top-button" type="submit">My Saved Collections</button></form>
+</div>
+
 
 <!-- <------------FLICKR API------------>   
 <div id="city-search">
     <form name="city-form" id="city-form" action="/save-city" method="POST">
       <!-- style="text-align: center; width: 100%; -->
-      <label><h3>Find images of people from a particular city or country.</h3></label>
-      <br>
-        <input name="user-city" id="user-city" placeholder="Place" type="text">
+      <h1>Search for people in different
+        <span
+           class="txt-rotate"
+           data-period="500"
+           data-rotate='[ "cities.", "countries.", "cultures."]'></span>
+      </h1>
+        <br>
+        <input name="user-city" id="user-city" type="text">
+        <div style="height: 2vh"></div>
         <button id="find-button" type="submit">Find</button>
     </form>
 </div>
-    
-  <script src="static/js/returnResult.js"></script>
+
+<script src="static/js/typing-animation.js"></script>
+<script src="static/js/returnResult.js"></script>
       
   <div id="image-results">
     <h3><div id="galleryTitle"></div></h3>

@@ -121,13 +121,20 @@
 <div id="city-search">
     <form name="city-form" id="city-form" action="/save-city" method="POST">
       <!-- style="text-align: center; width: 100%; -->
-      <label><h3>Enter city or country.</h3></label>
+      <h1>Search for people in different
+        <span
+           class="txt-rotate"
+           data-period="500"
+           data-rotate='[ "cities.", "countries.", "cultures."]'></span>
+      </h1>
       <br>
-        <input name="user-city" id="user-city" placeholder="Place" type="text">
+        <input name="user-city" id="user-city" type="text" autofocus>
+        <div style="height: 2vh"></div>
         <button id="find-button" type="submit">Find</button>
     </form>
 </div>
 
+<script src="static/js/typing-animation.js"></script>
 <script src="static/js/returnResult.js"></script>
       
 <div id="image-results">
