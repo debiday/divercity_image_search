@@ -7,7 +7,6 @@
   <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
-
 <!-------------------- Navbar-------------------------->
 <nav class="navbar navbar-expand-lg navbar-light bg-light no-gutter" role="navigation" style="width:100%; z-index: 10;">
   <div class="container">
@@ -152,6 +151,13 @@
 <!------------------------End-Flickr-search------------------------------->   
 
 <div style="height: 20vh;"></div>
+
+<!------------------Makes sure page loads from top------------------------>   
+<script>
+  $(document).ready(function(){
+    $(this).scrollTop(0);
+    });
+</script>
 
 {% endblock %}
 
