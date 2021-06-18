@@ -2,15 +2,44 @@
 {% block title %}Image Search Logged In{% endblock %}
 
 {% block body %}
-
+<!------------------------User-Nav------------------------------->  
+<nav class="navbar navbar-expand-lg  fixed-top navbar-light bg-light no-gutter" role="navigation" style="width:100%; z-index: 10;">
+  <div class="container">
+      <a class="navbar-brand" href="#">Divercity</a>
+      <button class="navbar-toggler border-0" id="hamburger" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
+      </button>
+      <div class="collapse navbar-collapse" id="exCollapsingNavbar">
+          <ul class="nav navbar-nav">
+              <li class="nav-item px-2"><a href="#" class="nav-link">About</a></li>
+              <li class="nav-item px-2"><a href="#" class="nav-link">Photographers</a></li>
+          </ul>
+          <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+              <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
+              <li class="dropdown order-1">
+                  <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
+                  <ul class="dropdown-menu dropdown-menu-right mt-2">
+                     <li class="px-3 py-2">
+                          <!-- <---->
+                          <form action="/login" class="navbar-form navbar-left" id="login-form" method="POST">
+                            <input type="email" placeholder="Email" id="email" class="form-control" name="email">
+                            <input type="password" placeholder="Password" class="form-control" id="password" name="password">
+                            <button type="submit" id="login-button" class="btn btn-default white-background" value="Login">Login</button>
+                            </form>
+                             <!-- <---->
+                      </li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+</nav>
+<!------------------------End-User-Nav------------------------------->  
+<!----------------------Background-Image----------------------------->  
 <div class="user-header">
   <img id="header-img-base" src="static/images/user.jpg" alt="header-image">
   </div>
 <!------ Image credits: Isabella Mendes, Pexels, Airplane ------->
+<!--------------------End-Background-Image--------------------------->  
 
-<!------------------------User-Nav------------------------------->  
-
-<!------------------------End-User-Nav------------------------------->  
 <div style="text-align:center;">
     <h8><p id="user-id"style="color:white;">{{ user.user_id }}</p></h8>
     <p><h5>Good to see you, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
@@ -58,7 +87,7 @@
 
 
 <div style="height: 20vh;"></div>
-
+<script src="static/js/returnResult.js"></script>
 {% endblock %}
 
 
