@@ -10,13 +10,17 @@
       </button>
       <div class="collapse navbar-collapse" id="exCollapsingNavbar">
           <ul class="nav navbar-nav">
-              <li class="nav-item px-2"><a href="#" class="nav-link">About</a></li>
-              <li class="nav-item px-2"><a href="#" class="nav-link">Photographers</a></li>
+              <li class="nav-item px-2"><a href="#" class="nav-link">My Collection</a></li>
           </ul>
           <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
+            <div class="btn-toolbar">
+            <form name="image-form" id="image-form" action="/save_images" method="POST" class="navbar-form navbar-left mr-2">
+              <button type="submit" id="logout-button" class="btn btn-default" style="background-color: orangered;">Save to Account</button>
+              </form>
             <form action="/logout" class="navbar-form navbar-left" id="login-form" method="get">
               <button type="submit" id="logout-button" class="btn btn-default white-background" value="Logout">Log out</button>
               </form>
+              </div>
                   </ul>
               </li>
           </ul>
@@ -58,26 +62,21 @@
     </form>
 </div>
 
-<script src="static/js/typing-animation.js"></script>
-<script src="static/js/returnResult.js"></script>
       
   <div id="image-results">
     <h3><div id="galleryTitle"></div></h3>
     <div style="clear:both;"></div>
-
-      <script src="static/js/saveImages.js"></script> 
-      <form name="image-form" id="image-form" action="/save_images" method="POST">
-        <input type="submit" value="Save to account"> 
-        <div id="flickr"/></div>
-        <p>Logged in?</p>
-        <input type="submit" value="Save to account">
-       </form> 
+    <div id="flickr"/></div>
+  </div>
 <!-- <------------END-FLICKR API------------>
 </div>
 
 
 <div style="height: 20vh;"></div>
+
+<script src="static/js/typing-animation.js"></script>
 <script src="static/js/returnResult.js"></script>
+<script src="static/js/saveImages.js"></script>
 {% endblock %}
 
 
