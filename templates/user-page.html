@@ -14,19 +14,9 @@
               <li class="nav-item px-2"><a href="#" class="nav-link">Photographers</a></li>
           </ul>
           <ul class="nav navbar-nav flex-row justify-content-between ml-auto">
-              <li class="nav-item order-2 order-md-1"><a href="#" class="nav-link" title="settings"><i class="fa fa-cog fa-fw fa-lg"></i></a></li>
-              <li class="dropdown order-1">
-                  <button type="button" id="dropdownMenu1" data-toggle="dropdown" class="btn btn-outline-secondary dropdown-toggle">Login <span class="caret"></span></button>
-                  <ul class="dropdown-menu dropdown-menu-right mt-2">
-                     <li class="px-3 py-2">
-                          <!-- <---->
-                          <form action="/login" class="navbar-form navbar-left" id="login-form" method="POST">
-                            <input type="email" placeholder="Email" id="email" class="form-control" name="email">
-                            <input type="password" placeholder="Password" class="form-control" id="password" name="password">
-                            <button type="submit" id="login-button" class="btn btn-default white-background" value="Login">Login</button>
-                            </form>
-                             <!-- <---->
-                      </li>
+            <form action="/logout" class="navbar-form navbar-left" id="login-form" method="get">
+              <button type="submit" id="logout-button" class="btn btn-default white-background" value="Logout">Log out</button>
+              </form>
                   </ul>
               </li>
           </ul>
