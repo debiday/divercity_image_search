@@ -37,7 +37,7 @@ function returnResults(evt) {
         $("#instructions").html("<p class='notbold'>Click the top right hand corner to select pictures.</p>");
         $("#ending").html("<br><h2>😀  Log in to save these images to your account 😀  </h2>");
         // window.scrollBy(-10000, -10000);
-        document.getElementById("flickr").scrollIntoView({ block: 'start',  behavior: 'smooth' });
+        document.getElementById('flickr').scrollIntoView({ block: 'start',  behavior: 'smooth' });
 
         $.each( data.photos.photo, function( i, gp ) {
 
