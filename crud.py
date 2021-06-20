@@ -88,7 +88,6 @@ def create_picture(collection_id, url):
     return new_picture
 
 
-
 def get_pictures_by_collection(collection_id):
     """Return all pictures in collection."""
 
@@ -97,56 +96,13 @@ def get_pictures_by_collection(collection_id):
     return collection_pictures.filter(Collection.collection_id == collection_id).all()
 
 
-def get_first_image(collection_id):
-    """Get the first image in the collection. """
+# def get_first_image(collection_id):
+#     """Get the first image in the collection. """
 
-    collection = get_pictures_by_collection(collection_id)
-    first_image = collection[0]
+#     collection = get_pictures_by_collection(collection_id)
+#     first_image = collection[0]
 
-    return first_image
-
-# def get_user_id_by_email(email):
-#     """Return a user id by email."""
-
-#     user_query = Tracking.query.join(User)
-
-#     return user_query.filter(User.email == email).all()
-
-# <-----Test CRUD Functions----->
-# def get_photos(image_tag):
-#     extras = ','.join(SIZES)
-#     flickr = FlickrAPI(KEY, SECRET)
-#     photos = flickr.walk(text=image_tag,  # it will search by image title and image tags
-#                             extras=extras,  # get the urls for each size we want
-#                             privacy_filter=1,  # search only for public photos
-#                             per_page=50,
-#                             sort='relevance')  # we want what we are looking for to appear first
-#     return photos
-
-
-# def get_url(photo):
-#     for i in range(len(SIZES)):  # makes sure the loop is done in the order we want
-#         url = photo.get(SIZES[i])
-#         if url:  # if url is None try with the next size
-#             return url
-
-
-# def get_urls(image_tag, max):
-#     photos = get_photos(image_tag)
-#     counter=0
-#     urls=[]
-
-#     for photo in photos:
-#         if counter < max:
-#             url = get_url(photo)  # get preffered size url
-#             if url:
-#                 urls.append(url)
-#                 counter += 1
-#             # if no url for the desired sizes then try with the next photo
-#         else:
-#             break
-
-#     return urls
+#     return first_image.url
 
 
 if __name__ == '__main__':

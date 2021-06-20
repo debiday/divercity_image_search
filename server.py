@@ -147,7 +147,7 @@ def collections_page():
     return render_template('collections-page.html', user=user, user_collection=user_collection)
   return redirect('/')
 
-# TODO: Fix delete route
+
 @app.route('/delete_collection', methods=['POST'])
 def delete_collection():
   """Delete collection from account."""
@@ -156,7 +156,6 @@ def delete_collection():
   crud.delete_collection(collection_id)
   
   return redirect('/collections') 
-
 
 # <!--------------------------------------------------------------->
 # <--Routes for Pictures Page -->
