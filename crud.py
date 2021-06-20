@@ -96,15 +96,33 @@ def get_pictures_by_collection(collection_id):
     return collection_pictures.filter(Collection.collection_id == collection_id).all()
 
 
-# def get_first_image(collection_id):
-#     """Get the first image in the collection. """
+def get_first_image(collection_id):
+    """Get the first image in the collection. """
 
-#     collection = get_pictures_by_collection(collection_id)
-#     first_image = collection[0]
+    collection = get_pictures_by_collection(collection_id)
+    first_image = collection[0]
 
-#     return first_image.url
+    return first_image.url
 
 
+#TODO: Create a dictionary of user collection plus first images? Joins?
+def get_first_image_all_collections(email):
+    """Get a dictionary of user collection and first image in each collection per user"""
+
+    #get collection from user_id
+    #get pictures from collection
+    #get first picture from collection
+
+
+    collections = get_collection_by_email(email)
+    first_in_collection = {}
+
+    for collection in collections:
+        first_in_collection[collection] = get_first_image(collection.collection_id)
+
+    return first_in_collection
+
+    
 if __name__ == '__main__':
     from server import app
     connect_to_db(app)
