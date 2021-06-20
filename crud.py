@@ -97,6 +97,13 @@ def get_pictures_by_collection(collection_id):
     return collection_pictures.filter(Collection.collection_id == collection_id).all()
 
 
+def get_first_image(collection_id):
+    """Get the first image in the collection. """
+
+    collection = get_pictures_by_collection(collection_id)
+    first_image = collection[0]
+
+    return first_image
 
 # def get_user_id_by_email(email):
 #     """Return a user id by email."""
