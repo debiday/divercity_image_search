@@ -121,8 +121,7 @@ def save_collection():
   urls = request.form.get('urls')
 
   new_collection = crud.create_collection(user_id=user_id, date_saved=date_saved, notes=notes)
-  collection_str = str(new_collection)
-  collection_id = int(collection_str[26:29])
+  collection_id = new_collection.collection_id
 
   url_list = urls.split(", ")
   for url in url_list:
