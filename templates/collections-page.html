@@ -33,12 +33,14 @@
 
 <div id="image-results">
 
-
 <p><h5>Here are your collections, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
+<p>Check: {{ user_collection }}</p>
 
 
     {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %}
     <p><h1>📸</h1></p>
+    <img src="{{ user_collection[collection] }}" width="300" height="300">
+      <p>Check: {{ user_collection[collection] }}</p>
     <form name="image-form" name="image-form" action="/show-images" method="POST">
       <input type="hidden" name="collection-id" value="{{ collection.collection_id }}">
       <input type="submit" id="{{ collection.collection_id }}" class="collection-id" value="Collection No.:{{ collection.collection_id }}">

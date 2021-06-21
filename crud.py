@@ -113,7 +113,6 @@ def get_first_image_all_collections(email):
     #get pictures from collection
     #get first picture from collection
 
-
     collections = get_collection_by_email(email)
     first_in_collection = {}
 

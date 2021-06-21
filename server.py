@@ -142,7 +142,8 @@ def collections_page():
     user = crud.get_user_by_email(session['email'])
     # session["email"] = email
 
-    user_collection = crud.get_collection_by_email(session['email'])
+    user_collection = crud.get_first_image_all_collections(session['email'])
+
 
     return render_template('collections-page.html', user=user, user_collection=user_collection)
   return redirect('/')
