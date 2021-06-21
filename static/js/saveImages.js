@@ -37,6 +37,7 @@ function saveImages(evt) {
 
 
         alert(response);
+        location.reload();
 
     });
 }

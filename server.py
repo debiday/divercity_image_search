@@ -11,10 +11,9 @@ import flickrapi
 from jinja2 import StrictUndefined
 
 app = Flask(__name__)
+app.config['TESTING'] = True
 app.secret_key = "placeholderkey"
 #for production replace "placeholderkey" with os.environ["FLASK_KEY"]
-app.jinja_env.undefined = StrictUndefined
-
 
 # <!--------------------------------------------------------------->
 # <--Search with Flickr API -->
@@ -180,7 +179,6 @@ def pictures_from_collection():
 
 
 
-
 # <___Previous Working Python Solutions_____>
 
 # @app.route('/save-images', methods=["POST"])
@@ -202,3 +200,5 @@ def pictures_from_collection():
 if __name__ == '__main__':
     connect_to_db(app)
     app.run(host='0.0.0.0', debug=True)
+    app.jinja_env.undefined = StrictUndefined
+    app.config['TEMPLATES_AUTO_RELOAD'] = True
