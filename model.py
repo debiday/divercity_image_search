@@ -47,7 +47,7 @@ class Picture(db.Model):
     __tablename__ = 'pictures'
 
     picture_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
-    collection_id = db.Column(db.Integer, db.ForeignKey('collections.collection_id'), nullable=False)
+    collection_id = db.Column(db.Integer, db.ForeignKey('collections.collection_id'), nullable=True)
     url = db.Column(db.String(200), nullable=False)
 
 

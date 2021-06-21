@@ -62,7 +62,7 @@ def get_collection_by_email(email):
 
     return user_collection.filter(User.email == email).all()
 
-
+#TODO: Fix delete function
 def delete_collection(collection_id):
     """Delete a collection object from the database."""
 
