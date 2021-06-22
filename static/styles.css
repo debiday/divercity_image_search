@@ -428,9 +428,11 @@ body, html {
 <--Collections Page -->
 <!---------------------------------------------------------------> */
 #delete-tracking{
-    margin: 0;
     position: absolute;
-    top: 50%;
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    top: 1px;
+    right: 16px;
+    background-color:rgba(45, 45, 45, 0.81);
+    color: white;
+    font-weight: bolder;
+    font-size: 2vh;
 }

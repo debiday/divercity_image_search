@@ -38,7 +38,7 @@
   <h5 style="color: rgb(182, 181, 181);">Your gallery, <span id="user-email">{{ user.email }}</span>.</h5>
 
 <!-------------------------End-Header-------------------------------->
-<!---------------------------Test---------------------------------->
+<!---------------------------Gallery--------------------------------->
 <!-- Page Content -->
   <div class="container">
 
@@ -63,7 +63,7 @@
             <p style="text-align: center; color:grey;">{{ collection.date_saved }}</p>
             <form action="/delete_collection" method="POST">
               <input type="hidden" name="collection_id" value="{{ collection.collection_id }}">
-              <input id="delete-tracking" type="submit" value="Delete">
+              <input id="delete-tracking" type="submit" value="X">
             </form>
           </a>
     </div>
@@ -71,27 +71,6 @@
   {% endfor %}
 </div>
 
-<!---------------------------End-Test---------------------------------->
+<!---------------------------End-Gallery------------------------------>
 
-    {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %}
-    <p><h1>Checking collection_id: {{ collection.collection_id }}</h1></p>
-    <img src="{{ user_collection[collection] }}" width="300" height="300">
-    <form name="image-form" name="image-form" action="/show-images" method="POST">
-      <input type="hidden" name="collection-id" value="{{ collection.collection_id }}">
-      <input type="submit" id="{{ collection.collection_id }}" class="collection-id" value="{{ collection.notes }}">
-    </form>
-
-    <h4 style="text-transform: capitalize;">{{ collection.notes }}</h4>
-    <p>Saved on {{ collection.date_saved }}</p>
-
-    <form action="/delete_collection" method="POST">
-      <input type="hidden" name="collection_id" value="{{ collection.collection_id }}">
-      <input id="delete-tracking" type="submit" value="Delete">
-    </form>
-    <br>
-    <br>
-      {% endfor %}
-
-    </div>
-
-    {% endblock %}
+{% endblock %}
