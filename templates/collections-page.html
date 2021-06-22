@@ -39,27 +39,45 @@
 <!-------------------------End-Header-------------------------------->
 <p>checking user_collection: {{ user_collection }}</p>
 <!---------------------------Test---------------------------------->
+<!-- Page Content -->
+<div class="container">
+
+  <h1 class="font-weight-light text-center text-lg-center mt-4 mb-0">Collections</h1>
+
+  <hr class="mt-2 mb-5">
+
+  <div class="row text-center text-lg-left">
+    {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %}
+    <div class="col-lg-3 col-md-4 col-6">
+      <a href="#" class="d-block mb-4 h-100">
+            <img class="img-fluid img-thumbnail" src="{{ user_collection[collection] }}" alt="collections" style="object-fit: cover; height:280px;">
+            <h6><span>Pictures from {{ collection.notes }} saved on {{ collection.date_saved }}</span></h6>
+            <form name="image-form" name="image-form" action="/show-images" method="POST">
+              <input type="hidden" name="collection-id" value="{{ collection.collection_id }}">
+              <input type="submit" id="{{ collection.collection_id }}" class="collection-id" value="Collection No.:{{ collection.collection_id }}">
+            </form>
+          </a>
+    </div>
+
+  {% endfor %}
+</div>
 
 <!---------------------------End-Test---------------------------------->
 
     {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %}
     <p><h1>Checking collection_id: {{ collection.collection_id }}</h1></p>
     <img src="{{ user_collection[collection] }}" width="300" height="300">
-      <p>Check: {{ user_collection[collection] }}</p>
-      <p>Check collection object: {{ collection }}</p>
     <form name="image-form" name="image-form" action="/show-images" method="POST">
       <input type="hidden" name="collection-id" value="{{ collection.collection_id }}">
       <input type="submit" id="{{ collection.collection_id }}" class="collection-id" value="Collection No.:{{ collection.collection_id }}">
     </form>
 
       <h4><span>Pictures from {{ collection.notes }} saved on {{ collection.date_saved }}</span></h4>
-      <div id="images-from-collection"></div>
 
     <form action="/delete_collection" method="POST">
       <input type="hidden" name="collection_id" value="{{ collection.collection_id }}">
       <input id="delete-tracking" type="submit" value="Delete">
     </form>
-    <p>🤔</p>
     <br>
     <br>
       {% endfor %}
