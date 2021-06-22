@@ -37,7 +37,6 @@ function returnResults(evt) {
                                 "<h5>Select images on the top right then click 'Save to Account'<h5>");
         $("#instructions").html("<p class='notbold'>Click the top right hand corner to select pictures.</p>");
         $("#ending").html("<br><h2>😀  Log in to save these images to your account 😀  </h2>");
-        // window.scrollBy(-10000, -10000);
         document.getElementById('flickr').scrollIntoView({ block: 'start',  behavior: 'smooth' });
 
         $.each( data.photos.photo, function( i, gp ) {
@@ -46,12 +45,8 @@ function returnResults(evt) {
                 let serverId = gp.server;
                 let id = gp.id;
                 let secret = gp.secret;
-
-
-        console.log(farmId + ", " + serverId + ", " + id + ", " + secret);
-
         
-        $("#flickr").append('<a href="https://www.flickr.com/photo.gne?id=' + id + '/" target="_blank" data-target="#myModal" data-toggle="modal"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg"/></a><input class="form-check-input" type="checkbox" name="selected" value="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg">');
+        $("#flickr").append('<a href="https://www.flickr.com/photo.gne?id=' + id + '/" target="_blank"><img src="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg"/></a><input class="form-check-input" type="checkbox" name="selected" value="https://farm' + farmId + '.staticflickr.com/' + serverId + '/' + id + '_' + secret + '.jpg">');
 
         });
         });

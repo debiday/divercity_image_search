@@ -34,17 +34,15 @@
 <!---------------------------Header----------------------------------> 
 
 <div id="image-results">
-<p><h5>Here are your collections, <b><span id="user-email">{{ user.email }}</span>.</b></h5></p>
+  <div style="height: 5vh;"></div>
+  <h5 style="color: rgb(182, 181, 181);">Your gallery, <span id="user-email">{{ user.email }}</span>.</h5>
 
 <!-------------------------End-Header-------------------------------->
-<p>checking user_collection: {{ user_collection }}</p>
 <!---------------------------Test---------------------------------->
 <!-- Page Content -->
-<div class="container">
+  <div class="container">
 
-  <h1 class="font-weight-light text-center text-lg-center mt-4 mb-0">Collections</h1>
-
-  <hr class="mt-2 mb-5">
+  <div style="height: 5vh;"></div>
 
   <div class="row text-center text-lg-left">
     {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %}
@@ -53,9 +51,20 @@
             <form name="image-form" name="image-form" action="/show-images" method="POST">
               <input type="image" class="img-fluid z-depth-1" src="{{ user_collection[collection] }}" alt="collections" style="object-fit: none; height:300px; width:300px">
               <input type="hidden" name="collection-id" value="{{ collection.collection_id }}">
-              <input type="submit" id="{{ collection.collection_id }}" class="collection-id" value="{{ collection.notes }}">
+              <p id="{{ collection.collection_id }}" class="collection-id h1 text-white" 
+              style="position: absolute;
+                     top: 45%;
+                     left: 50%;
+                     transform: translate(-50%, -50%);
+                     opacity: 75%;
+                     font-weight: bold;
+                     text-shadow: 2px 2px #000000;">{{ collection.notes }}</p>
             </form>
-            <h6><span>saved on {{ collection.date_saved }}</span></h6>
+            <p style="text-align: center; color:grey;">{{ collection.date_saved }}</p>
+            <form action="/delete_collection" method="POST">
+              <input type="hidden" name="collection_id" value="{{ collection.collection_id }}">
+              <input id="delete-tracking" type="submit" value="Delete">
+            </form>
           </a>
     </div>
 

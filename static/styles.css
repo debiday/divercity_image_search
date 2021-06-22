@@ -422,3 +422,15 @@ body, html {
 .user-header {
     height: 10vh;
 }
+
+
+/* <!--------------------------------------------------------------->
+<--Collections Page -->
+<!---------------------------------------------------------------> */
+#delete-tracking{
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
