@@ -254,7 +254,7 @@ header {
     width: 230px;
     height: 230px;
     object-fit: cover;
-    border: 5px solid rgba(255,255,255,.5);
+    border: 5px solid rgba(255, 255, 255, 0.091);
 
 }
 
@@ -293,7 +293,6 @@ input[type="checkbox"] {
   
   input[type="checkbox"]:disabled {
     background: #e6e6e6;
-    opacity: 0.8;
     pointer-events: none;
   }
   

@@ -33,7 +33,8 @@ function returnResults(evt) {
 
 
         document.getElementById('flickr').replaceChildren();
-        $("#galleryTitle").html("<span>You have searched for people in </span>" + savedData["city"]+".");
+        $("#galleryTitle").html("<span>You have searched for people in </span>" + savedData["city"]+"."+ 
+                                "<h5>Select images then click 'Save to Account'<h5>");
         $("#instructions").html("<p class='notbold'>Click the top right hand corner to select pictures.</p>");
         $("#ending").html("<br><h2>😀  Log in to save these images to your account 😀  </h2>");
         // window.scrollBy(-10000, -10000);
