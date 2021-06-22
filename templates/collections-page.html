@@ -50,7 +50,7 @@
     {% for collection in user_collection | sort(attribute='collection_id', reverse = True) %}
     <div class="col-lg-3 col-md-4 col-6">
       <a href="#" class="d-block mb-4 h-100">
-            <img class="img-fluid img-thumbnail" src="{{ user_collection[collection] }}" alt="collections" style="object-fit: none; height:280px; width:280px">
+            <input type="image" class="img-fluid z-depth-1" src="{{ user_collection[collection] }}" alt="collections" style="object-fit: none; height:300px; width:300px">
             <h6><span>Pictures from {{ collection.notes }} saved on {{ collection.date_saved }}</span></h6>
             <form name="image-form" name="image-form" action="/show-images" method="POST">
               <input type="hidden" name="collection-id" value="{{ collection.collection_id }}">
@@ -72,7 +72,8 @@
       <input type="submit" id="{{ collection.collection_id }}" class="collection-id" value="Collection No.:{{ collection.collection_id }}">
     </form>
 
-      <h4><span>Pictures from {{ collection.notes }} saved on {{ collection.date_saved }}</span></h4>
+    <h4 style="text-transform: capitalize;">{{ collection.notes }}</h4>
+    <p>Saved on {{ collection.date_saved }}</p>
 
     <form action="/delete_collection" method="POST">
       <input type="hidden" name="collection_id" value="{{ collection.collection_id }}">

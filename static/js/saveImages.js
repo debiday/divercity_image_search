@@ -8,8 +8,7 @@ function saveImages(evt) {
     evt.preventDefault();
 
     let today = new Date();
-    let date_saved = (today.getMonth()+1)+'-'+today.getDate()+'-'+today.getFullYear();
-
+    let date_saved = today.getMonth()+'-'+today.getDate()+'-'+today.getFullYear();
     let user_id = $('#user-id').text();
 
     let arr = [];
@@ -22,19 +21,21 @@ function saveImages(evt) {
 
     let url = "/save-images";
 
+    let city = $('#user-city').val();
+    let notes = city.charAt(0).toUpperCase() + city.slice(1)
+
 
     let savedData = {
                     //  'user_id': user_id,
                      'city': $('#user-city').val(),
                      'user_id': user_id,
                      'date_saved': date_saved,
-                     'notes': $('#user-city').val(),
+                     'notes': notes,
                      'urls': urls,
                     //  'email': email
                     };
 
     $.post(url, savedData, (response) => {
-
 
         alert(response);
         location.reload();

@@ -30,7 +30,7 @@ class Collection(db.Model):
 
     collection_id = db.Column(db.Integer, autoincrement=True, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
-    date_saved = db.Column(db.DateTime, nullable=False)
+    date_saved = db.Column(db.String(50), nullable=False)
     notes = db.Column(db.String(2000), nullable=True)
 
     users = db.relationship('User', backref='collections')
