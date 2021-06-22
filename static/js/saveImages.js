@@ -26,13 +26,12 @@ function saveImages(evt) {
 
 
     let savedData = {
-                    //  'user_id': user_id,
                      'city': $('#user-city').val(),
                      'user_id': user_id,
                      'date_saved': date_saved,
                      'notes': notes,
                      'urls': urls,
-                    //  'email': email
+
                     };
 
     $.post(url, savedData, (response) => {
