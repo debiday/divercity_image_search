@@ -167,7 +167,10 @@ def show_full_collection():
 
   collection_pictures = crud.get_pictures_by_collection(collection_id)
 
-  return render_template('pictures.html', collection_pictures=collection_pictures)
+  city = crud.get_city_by_collection(collection_id)
+
+
+  return render_template('pictures.html', collection_pictures=collection_pictures, collection_id=collection_id, city=city)
 
 
 

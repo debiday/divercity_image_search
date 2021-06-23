@@ -62,7 +62,17 @@ def get_collection_by_email(email):
 
     return user_collection.filter(User.email == email).all()
 
-#TODO: Fix delete function
+
+#TODO: Create a get notes by collection function.
+def get_city_by_collection(collection_id):
+    """Get city name in notes with collection_id"""
+    
+    city = get_collection_by_id(collection_id)
+
+    return city.notes
+
+
+
 def delete_collection(collection_id):
     """Delete a collection object from the database."""
 
@@ -105,7 +115,6 @@ def get_first_image(collection_id):
     return first_image.url
 
 
-#TODO: Create a dictionary of user collection plus first images? Joins?
 def get_first_image_all_collections(email):
     """Get a dictionary of user collection and first image in each collection per user"""
 
