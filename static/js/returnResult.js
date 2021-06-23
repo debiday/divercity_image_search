@@ -36,8 +36,8 @@ function returnResults(evt) {
         $("#galleryTitle").html("<span>You have searched for people in </span>" + savedData["city"]+"."+ 
                                 "<h5>Select images on the top right then click 'Save to Account'<h5>");
         $("#instructions").html("<p class='notbold'>Click the top right hand corner to select pictures.</p>");
-        $("#ending").html("<br><h2>😀  Log in to save these images to your account 😀  </h2>");
         document.getElementById('flickr').scrollIntoView({ block: 'start',  behavior: 'smooth' });
+        $("#ending").html("<br><h2 style='margin-top:10vh;'>Log in to save these images to your account</h2><p><b>Demo Account:</b> demo@demo &nbsp;<b>Password:</b> demo</p>");
 
         $.each( data.photos.photo, function( i, gp ) {
 
