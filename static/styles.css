@@ -77,6 +77,7 @@ opacity: 1;
 transform: perspective(800px) rotateX(0);
 }
 }
+
 /* <!--------------------------------------------------------------->
 <--Navbar -->
 <!---------------------------------------------------------------> */
@@ -108,7 +109,6 @@ button:focus {
 .navbar-inner {
     background:transparent;
 }
-
 
 /* <!--------------------------------------------------------------->
 <--Revised Header -->
@@ -159,7 +159,6 @@ button:focus {
    }
  }
 
-
 /* Default height for small devices */
 #intro {
 width: 100%;
@@ -186,11 +185,6 @@ header {
     text-align: center;
     color: white;
 }
-/* 
-.header-stuff {
-    display:inline-block;
-    position:relative;
-} */
 
 .header-stuff button {
     position: absolute;
@@ -219,8 +213,6 @@ header {
     width: 100%;
 }
 
-
-
 /* <!--------------------------------------------------------------->
 <--Image Search -->
 <!---------------------------------------------------------------> */
@@ -248,8 +240,6 @@ header {
     text-align: center;
     padding-top: 100px;
 }
-
-
 
 /* TODO: Images not centred yet */
 #flickr {
@@ -323,6 +313,7 @@ input[type="checkbox"] {
   input[type="checkbox"]:disabled:after {
     border-color: #7b7b7b46;
   }
+
 /* <!--------------------------------------------------------------->
 <--Modal Registration -->
 <!---------------------------------------------------------------> */
@@ -431,7 +422,6 @@ body, html {
     height: 10vh;
 }
 
-
 /* <!--------------------------------------------------------------->
 <--Collections Page -->
 <!---------------------------------------------------------------> */
@@ -444,7 +434,6 @@ body, html {
     font-weight: bolder;
     font-size: 2vh;
 }
-
 
 /* <!--------------------------------------------------------------->
 <--Footer -->
@@ -459,4 +448,3 @@ body, html {
     text-align: center;
   }
   </style>
-  
