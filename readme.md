@@ -25,19 +25,19 @@
 ## About The Project
 
 **Register**
-![Front-page](https://github.com/Debiday/Divercity/blob/master/static/images/register.gif)
+![Front-page](https://github.com/Debiday/Divercity/blob/master/static/images/front-page.gif)
 
 
 
 **Search**
 * Users can search for images and save them to a collection.
-![Image-search](https://github.com/Debiday/Divercity/blob/master/static/images/search.gif)
+![Image-search](https://github.com/Debiday/Divercity/blob/master/static/images/user-search.gif)
 
 
 
 **Save**
 * Users can revisit their curated collections from each city.
-![Image-save](https://github.com/Debiday/Divercity/blob/master/static/images/d33.gif)
+![Image-save](https://github.com/Debiday/Divercity/blob/master/static/images/collection.gif)
 
 
 
@@ -79,17 +79,17 @@ Users are able to query for images of people based on city.
 * Create a search bar that allow user to search for people in a specific city
 * Allow users to log into their own account to save pictures
 
-### 2.0 - Current
+### 2.0 
 * Allow users to save pictures to a specific collection
 * Create functionality to add/delete photos for a curated collection
-* Add google's autocomplete API for places
+* Dynamically add collection with first image and location to user's gallery
 
-### 3.0 - The future
+### 3.0 - Current
 * Create resources for user to reach out to photographers
 * Integrate API for stock photo choices
 * Give users the choice to pay for licensed photos
 * Allow users to share their collections with other users
-* A zoomable world map that load related images on click
+* Demo
 
 <!-- Installation -->
 ### Installation
