@@ -7,16 +7,15 @@
   </a>
 
   <h3 align="center">Divercity</h3>
-  <a href="https:divercity.deborahong.com" align="center">View Application</a>
 
   <p align="center">
     This application allows you to create a visual resource for ethnicities in different places around the world. The project uses the Flickr api to generate the 100 most recent photographs from each query.  
     <br />
     <br />
     <br />
-    <a href="https://github.com/debiday/Divercity">View Demo</a>
+    <a href="https://divercity.deborahong.com">Try App</a>
     ·
-    <a href="https://github.com/debiday/Divercity/issues">Report Bug</a>
+    <a href="https://github.com/debiday/Divercity">View Demo</a>
     ·
     <a href="https://github.com/debiday/Divercity/issues">Request Feature</a>
   </p>
