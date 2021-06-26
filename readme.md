@@ -13,7 +13,7 @@
     <br />
     <br />
     <br />
-    <a href="https://www.divercity.deborahong.com">Try App</a>
+    <a href="http://divercity.deborahong.com/">Try App</a>
     ·
     <a href="https://github.com/debiday/Divercity">View Demo</a>
     ·
