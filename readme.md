@@ -96,17 +96,15 @@ Users are able to query for images of people based on city.
 
 1. `git clone` this repository 
 2. `cd divercity` to go to the directory
-3. `virtualenv env` to create a virtual environment
-4. `source env/bin/activate` to activate it
-5. `pip3 install -r requirements.txt` to install required packages
-6. Sign up for an API key at [flickr API](https://www.flickr.com/services/apps/create/noncommercial/?) (You can enter "demo" for both boxes)
-7. Create a new file called  `secrets.sh` in the Divercity directory
-8. Save your API in this format 
+3. `pip3 install -r requirements.txt` to install required packages
+4. Sign up for an API key at [flickr API](https://www.flickr.com/services/apps/create/noncommercial/?) (You can enter "demo" for both boxes)
+5. Create a new file called  `secrets.sh` in the Divercity directory
+6. Save your API in this format 
 `export API_KEY="xxxxx"/n
 export API_SECRET="xxxxx"`
-9. `source secrets.sh` back in the terminal
-10. `python3 seed.py` to set up database
-11. `python3 server.py` to launch and view on (http://localhost:5000/)! 
+7. `source secrets.sh` back in the terminal
+8. `python3 seed.py` to set up database
+9. `python3 server.py` to launch and view on (http://localhost:5000/)! 
 
 ### Run Tests
 
