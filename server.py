@@ -76,7 +76,6 @@ def submit_login_form():
   elif password != user.password:
     # flash('Wrong password. Please try again.')
     return ("Wrong password")
-
   else: 
     # flash('Logged in!')
     session['email'] = user.email
@@ -92,7 +91,6 @@ def logout():
     flash("Successfully logged out")
         
     return redirect('/')
-
 
 # <!--------------------------------------------------------------->
 # <--Routes for Collections Page -->
@@ -182,7 +180,7 @@ def pictures_from_collection():
 
 
 
-# <___Previous Working Python Solutions_____>
+# <___Alternative Working Solution_____>
 
 # @app.route('/save-images', methods=["POST"])
 # def save_images():

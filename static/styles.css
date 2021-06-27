@@ -206,7 +206,6 @@ header {
     width: 250px;
 }
 
-
 .header-img {
     padding-top: 60px;
     height: auto;
@@ -241,7 +240,6 @@ header {
     padding-top: 100px;
 }
 
-/* TODO: Images not centred yet */
 #flickr {
     display: inline-block;
 
@@ -251,7 +249,6 @@ header {
     height: 230px;
     object-fit: cover;
     border: 5px solid rgba(255, 255, 255, 0.091);
-
 }
 
 input[type=checkbox] {

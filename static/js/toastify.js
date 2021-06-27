@@ -1,7 +1,6 @@
 "use strict";
 
 document.querySelector('#login-button').addEventListener('click', (evt) => {
-    // preventDefault will prevent the default behavior so be flexible with the functionality
     evt.preventDefault();
 
     const formData = {
