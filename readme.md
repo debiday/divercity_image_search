@@ -125,20 +125,7 @@ export API_SECRET="xxxxx"`
 
 Deborah Ong - [@debieday](https://twitter.com/debieday) - Deborah.oyt@gmail.com
 
-Project Link: [https://github.com/debiday/Divercity](https://github.com/debiday/Divercity)
-
-
-
-<!-- ACKNOWLEDGEMENTS -->
-## Project for Fall 2021 Shopify Developer Internship
-
-Fulfilled requirements of 
-
-* Building an image repository 
-* Including tests
-* A search function from text
-* Able to add image(s) to the repository
-* Secure uploading and stored images with sessions
+Project Link: [http://divercity.deborahong.com/](http://divercity.deborahong.com/)
 
 
 
