@@ -14,6 +14,8 @@
     <br />
     <br />
     <a href="http://divercity.deborahong.com/">Try App</a>
+    <p>Test email: demo@demo </p>
+    <p>Test password: demo </p>
   </p>
 </p>
 
