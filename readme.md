@@ -14,10 +14,6 @@
     <br />
     <br />
     <a href="http://divercity.deborahong.com/">Try App</a>
-    ·
-    <a href="https://github.com/debiday/Divercity">View Demo</a>
-    ·
-    <a href="https://github.com/debiday/Divercity/issues">Request Feature</a>
   </p>
 </p>
 
